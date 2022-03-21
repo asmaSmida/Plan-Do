@@ -1,0 +1,23 @@
+.firstImageContainer{
+   background-image: url(./home.jpg);
+   height: 650px;
+   background-position: center;
+   background-size:cover;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.firstImageContainer h1{
+    font-size: 3rem;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    margin: auto;
+    padding: 20rem 0 0 10rem;
+    color:whitesmoke;
+}
+.firstImageContainer h2{
+    font-size: 2rem;
+    word-spacing: 10px;
+    letter-spacing: 4px;
+    margin: auto;
+    padding: 1rem 0 0 8rem;
+    color:#8095b4;
+}

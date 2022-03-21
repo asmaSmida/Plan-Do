@@ -1,0 +1,22 @@
+.whoarewecontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    margin: 3rem auto;
+}
+.whoarewetext{
+    width: 50%;
+}
+.whoarewetext h1{
+    color: black;
+    font-size: 1.5rem;
+}
+.whoarewetext p{
+    color: black;
+    font-size: 0.9rem;
+}
+.whoareweimg img{
+    height: 22rem;
+    width: 24rem;
+}
