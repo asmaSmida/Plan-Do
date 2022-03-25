@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './SingleEstablish.module.css';
 import Dar from './Dar-Kenza.jpg';
 import agent from './agent.jpg';
-import Navbar from '../navbar/Navbar';
 
 export default function SingleEstablish(){
     return(
@@ -24,7 +23,7 @@ export default function SingleEstablish(){
                     <div className={classes.column}>
                         <div>
                         <h2>Establishement Description</h2>
-                        <p>Property Description
+                        <p className={classes.p}>Property Description
                             Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Cras ultricies ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar quam id dui posuere blandit.
                             Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
                         </p>
@@ -49,7 +48,7 @@ export default function SingleEstablish(){
                     </div>
                     <div className={classes.column}>
                         <h2>Quick Summary</h2>
-                        <p>
+                        <p className={classes.p}>
                                 Property ID:1134
                                 Location: Kelibia, IL 606543
                                 Property Type: House
@@ -67,26 +66,26 @@ export default function SingleEstablish(){
                             <img src={agent} alt='agent'></img>
                         </div>
                         <div>
-                            <p>
+                            <p className={classes.p}>
                             Anabella Geller
                             Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
                             </p>
-                            <p>
+                            <p className={classes.p}>
                             Phone:
                             (222) 4568932</p>
-                            <p>
+                            <p className={classes.p}>
                             Mobile:
                             777 287 378 737</p>
-                            <p>
+                            <p className={classes.p}>
                             Email:
                             annabella@example.com</p>
-                            <p>
+                            <p className={classes.p}>
                             Skype:
                             Annabela.ge
                             </p>
                         </div>
                         <div>
-                            <p>Formulaire</p>
+                            <p className={classes.p}>Formulaire</p>
                         </div>
                     </div>
                 </div>
