@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './SingleEstablish.module.css';
 import Dar from './Dar-Kenza.jpg';
 import agent from './agent.jpg';
+import Map from '../../map/Map';
 
 export default function SingleEstablish(){
     return(
@@ -90,6 +91,9 @@ export default function SingleEstablish(){
                     </div>
                 </div>
             </div>
+            <hr ></hr>
+            <div className={classes.map}>
+            <Map latitude="33.230490" longitude="-8.499030" /></div>
         </div>
     );
 }

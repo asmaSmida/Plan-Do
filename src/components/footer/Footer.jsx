@@ -1,7 +1,7 @@
 import classes from "./Footer.module.css";
 import logo from "./planDO.png";
 import EmailIcon from "@mui/icons-material/Email";
-import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
+import HouseIcon from '@mui/icons-material/House';
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
 import CopyrightIcon from "@mui/icons-material/Copyright";
 import SocialMedia from "../socialmediaBox/SocialMedia";
@@ -27,9 +27,9 @@ export default function Footer() {
             </div>
             <div>
               <p>
-                <ConfirmationNumberIcon className={classes.icon} />
-                <a className={classes.link} href="/planning">
-                  Ticket
+                <HouseIcon className={classes.icon} />
+                <a className={classes.link} href="/places">
+                  Places
                 </a>
               </p>
             </div>

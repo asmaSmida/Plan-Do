@@ -4,8 +4,8 @@
     flex-direction: row;
     align-items: center;
     margin: 0 auto;
-    /*color: transparent;
-    backdrop-filter: blur(20px);*/
+    color: transparent;
+    backdrop-filter: blur(2px);
    
   }
   .navbar .links {
@@ -20,6 +20,9 @@
     
   }
   .navbar a:hover {
+    color: #00A8A8;
+  }
+  h3{
     color: #00A8A8;
   }
   .content {

@@ -58,3 +58,10 @@ button:hover{
 .agentbody img{
     width: 200px;
 }
+.map{
+    margin-top: 5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
