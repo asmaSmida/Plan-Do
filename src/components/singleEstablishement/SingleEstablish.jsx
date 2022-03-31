@@ -3,12 +3,15 @@ import classes from './SingleEstablish.module.css';
 import Dar from './Dar-Kenza.jpg';
 import agent from './agent.jpg';
 import Map from '../../map/Map';
+import Navbar from '../navbar/Navbar'
+import Leisure from '../leisure/leisure';
 
 export default function SingleEstablish(){
     return(
         <div className={classes.singleContainer}>
+            <Navbar />
             <div className={classes.header}>
-                <div>
+                <div className={classes.vl}>
                     <h3>Dar Kenza</h3>
                     <h5>Kelibia, 8000</h5>
                 </div>
@@ -20,17 +23,21 @@ export default function SingleEstablish(){
                 <div className={classes.img}>
                     <img src={Dar} alt="dar Kenza" />
                 </div>
+                <div>
+                    <Leisure hammam="true" resto="true" piscine="true"/>
+                </div>
                 <div className={classes.row}>
                     <div className={classes.column}>
                         <div>
                         <h2>Establishement Description</h2>
+                        <hr className={classes.hr}/>
                         <p className={classes.p}>Property Description
                             Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Cras ultricies ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar quam id dui posuere blandit.
                             Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
                         </p>
                         </div>
                         <div>
-                            <h2>Amenities</h2>
+                            <h2>Amenities</h2><hr className={classes.hr}/>
                             <ul>
                                 <li>
                                     Parking
@@ -48,7 +55,7 @@ export default function SingleEstablish(){
                         </div>
                     </div>
                     <div className={classes.column}>
-                        <h2>Quick Summary</h2>
+                        <h2>Quick Summary</h2><hr className={classes.hr}/>
                         <p className={classes.p}>
                                 Property ID:1134
                                 Location: Kelibia, IL 606543
@@ -61,7 +68,7 @@ export default function SingleEstablish(){
                     </div>
                 </div>
                 <div className={classes.agent}>
-                    <h2>Contact Agent</h2>
+                    <h2>Contact Agent</h2><hr className={classes.hr}/>
                     <div className={classes.agentbody}>
                         <div>
                             <img src={agent} alt='agent'></img>

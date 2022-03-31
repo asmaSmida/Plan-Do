@@ -1,5 +1,5 @@
 .singleContainer{
-    margin: 2rem;
+    color: #D5A09E;
 }
 .header{
     display: flex;
@@ -9,6 +9,8 @@
     word-spacing: 5px;
     letter-spacing: 3px;
     margin-bottom: 3rem;
+    margin-top: 5rem;
+
 }
 .img img{
     display: block;
@@ -20,6 +22,13 @@
 .p{
     font-size: 1rem;
     width: 80%;
+}
+
+p, li,h5{
+    color: #03444A;
+}
+.body{
+    margin: 5rem;
 }
 button{
     background-color: whitesmoke;
@@ -65,3 +74,16 @@ button:hover{
   margin-right: auto;
   width: 40%;
 }
+.hr{
+    width: 4rem;
+    border-top: 2px solid #00A8A8;
+    color: #00A8A8;
+}
+h2{
+    font-weight: bold;
+}
+.vl {
+    border-left: 3px solid #03444A;
+    height: 80px;
+    padding-left: 30px;
+  }

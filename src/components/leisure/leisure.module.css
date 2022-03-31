@@ -1,0 +1,17 @@
+.iconLeisure{
+    height: 2.5rem;
+    width: 2.5rem;
+    color: #9AD3DA;  
+}
+.leisure{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 5rem 2rem;
+}
+h3{
+    font-size: 1.3rem;
+    color: #03444A;
+    
+}
