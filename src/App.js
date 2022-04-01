@@ -9,9 +9,10 @@ function App() {
       <div> 
         <Routes>
            <Route exact path="/" element={<Acceuil type =" " />}  /> 
+           <Route exact path="/single" element={<SingleEstablish type =" " />}  />
            <Route exact path="/annif" element={<PlacesList type ="lorem" />}  />
-           <Route exact path="/teambuilding" element={<SingleEstablish type ="teambuilding" />}  />
-           <Route exact path="/shoot" element={<PlacesList type ="shoot" />}  />
+           <Route exact path="/teambuilding" element={<PlacesList type ="molli" />}  />
+           <Route exact path="/shoot" element={<PlacesList type ="ipsum" />}  />
            {/* <Route exact path="/projects/:id" element={<ShowPlaces/>}  />  */}
         </Routes>
       </div>

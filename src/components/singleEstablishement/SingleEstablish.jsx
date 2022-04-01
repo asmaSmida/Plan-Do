@@ -5,6 +5,7 @@ import agent from './agent.jpg';
 import Map from '../../map/Map';
 import Navbar from '../navbar/Navbar'
 import Leisure from '../leisure/leisure';
+import Footer from '../footer/Footer';
 
 export default function SingleEstablish(){
     return(
@@ -100,7 +101,8 @@ export default function SingleEstablish(){
             </div>
             <hr ></hr>
             <div className={classes.map}>
-            <Map latitude="33.230490" longitude="-8.499030" /></div>
+            <Map latitude="33.230490" longitude="-8.499030" className={classes.map} /></div>
+            <Footer />
         </div>
     );
 }

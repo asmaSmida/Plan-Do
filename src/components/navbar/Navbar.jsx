@@ -7,7 +7,7 @@ const Navbar = () => {
         <h3>PLAN and DO</h3>
         <div className="links">
           <Link to="/" className="link-button">Home</Link>
-          <Link to="/"className="link-button">View Places</Link>
+          <Link to="/single"className="link-button">Single Place</Link>
           <Link to="/annif"className="link-button">Anniversary Places</Link>
           <Link to="/teambuilding"className="link-button">TeamBuilding Places</Link>
           <Link to="/shoot"className="link-button">PhotoShoot Places</Link>

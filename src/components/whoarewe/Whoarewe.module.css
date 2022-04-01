@@ -1,22 +1,32 @@
 .whoarewecontainer{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 80%;
+    justify-content: space-evenly;
+    width: 90%;
     margin: 3rem auto;
 }
 .whoarewetext{
     width: 50%;
+    margin: 2rem;
 }
 .whoarewetext h1{
-    color: black;
-    font-size: 1.5rem;
+    color: #D5A09E;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
 }
 .whoarewetext p{
-    color: black;
-    font-size: 0.9rem;
+
+    color: #03444A;
+    font-size: 1rem;
+}
+hr{
+    width: 30%;
+    border: 1px solid #022c30;
+    background-color: #03444A;
+    
 }
 .whoareweimg img{
     height: 22rem;
     width: 24rem;
+    border-radius: 2rem;
 }
