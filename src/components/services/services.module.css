@@ -7,7 +7,7 @@
     color: #D5A09E;
     text-align: center;
 }
-hr{
+.hr{
     width: 30%;
     border: #03444A 1px solid;
     margin-left:35%;
@@ -22,26 +22,26 @@ hr{
 }
 .service1:hover{
     background-color: #03444a50;
-    color: #E7E7E0;
+    color: white;
     padding: 0.7rem;
 }
 .service1:hover p, .service2:hover p,.service3:hover p,.service4:hover p{
-    color: #E7E7E0;
+    color: white;
 }
 
 .service2:hover{
     background-color: #00a8a850;
-    color: #E7E7E0;
+    color: white;
     padding: 0.7rem;
 }
 .service3:hover{
     background-color: #03444a64;
-    color: #E7E7E0;
+    color: white;
     padding: 0.7rem;
 }
 .service4:hover{
     background-color: #d5a09e5e;
-    color: #E7E7E0;
+    color: white;
     padding: 0.7rem;
 }
 .service1 h1{

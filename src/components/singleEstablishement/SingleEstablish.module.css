@@ -51,18 +51,22 @@ button:hover{
     display: flex;
     flex-direction: row;
 }
-.agent{
-    margin:2rem;
+.agent h2, .agent hr{
+    margin-left: 2rem;
 }
 .agentbody{
     display: flex;
     flex-direction: row;
     text-align: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-top: 2rem;
 }
 .agentbody div{
+    
     width: 33%;
+}
+.image{
+    width: 60%;
 }
 .agentbody img{
     width: 200px;
@@ -74,7 +78,7 @@ button:hover{
   margin-right: auto;
   width: 40%;
 }
-.hr{
+.hrEst{
     width: 4rem;
     border-top: 2px solid #00A8A8;
     color: #00A8A8;
@@ -87,6 +91,12 @@ h2{
     height: 80px;
     padding-left: 30px;
   }
+.contactAgent{
+    text-align: justify;
+    margin-left: 0.7rem;
+    margin-bottom: 1rem;
+    color:#00A8A8;
+}
 .map{
     margin-bottom: 5rem;
 }

@@ -4,7 +4,7 @@ export default function Services() {
     return (
         <div>
         <h1 className={classes.title}>Nos Services</h1>
-            <hr></hr>
+            <hr className={classes.hr}></hr>
         <div className={classes.services}>
             <div className={classes.service1}>
                 <h1>
