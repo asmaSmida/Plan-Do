@@ -1,0 +1,12 @@
+/* place lists / list */
+.placeList {
+    margin: 30px 0;
+    border-bottom: 1px solid #fafafa;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+  }
+  .placeList  a{
+    text-decoration: none;
+  }

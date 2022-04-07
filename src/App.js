@@ -1,7 +1,9 @@
-import PlacesList from './components/PlacesList';
+
 import Acceuil from './pages/Acceuil/Acceuil';
 import {BrowserRouter, Routes,Route} from 'react-router-dom';
 import SingleEstablish from './components/singleEstablishement/SingleEstablish';
+import PlacesList from './components/places/PlacesList';
+
 function App() {
   return (  
       <BrowserRouter>

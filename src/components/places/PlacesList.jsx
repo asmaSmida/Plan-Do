@@ -1,7 +1,7 @@
 import useFetch from "./useFetch";
 import ShowList from "./ShowList";
-import Navbar from "./navbar/Navbar";
-import Footer from "./footer/Footer";
+import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
 const PlacesList = ({ type }) => {
   const { data: places, isPending, error } = useFetch('https://jsonplaceholder.typicode.com/posts');
 
