@@ -1,62 +1,60 @@
+.servicesCom{
+    background-color: #9AD3DA;
+    margin: 3rem 0;
+    padding: 3rem;
+}
+.servicesCom h5{
+    text-align: center;
+    padding-top: 0.2rem;
+    letter-spacing: 2px;
+}
 .services{
     display: flex;
     flex-direction: row;
-    margin: 3rem 0;
 }
 .title{
-    color: #D5A09E;
+    color: white;
     text-align: center;
+    font-size: 2.5rem;
 }
 .hr{
-    width: 30%;
+    width: 20%;
     border: #03444A 1px solid;
-    margin-left:35%;
-    margin-right:35%;
-
+    margin-left:40%;
+    margin-right:40%;
 }
-.services div{
-    border: 1px solid #03444A;
+.service{
     width: 25%;
-    padding: 0.8rem;
+    background-color: #e7e0e751;
+    padding: 1rem;
     text-align: center;
+    margin: 0.5rem;
+    color: #03444A;
 }
-.service1:hover{
+.iconDiv{
+    background-color:#00A8A8;
+    border-radius: 50%;
+    width: 20%;
+    padding: 0.4rem;
+    margin: 0.4rem auto;
+}
+.icon{
+    color: white;
+    margin: 0.2rem;
+}
+.service:hover{
     background-color: #03444a50;
     color: white;
+}
+.service p{
     padding: 0.7rem;
+    text-align: justify;
+    font-size: 0.7rem;
+    color: #027d7d;
 }
-.service1:hover p, .service2:hover p,.service3:hover p,.service4:hover p{
+.service h1{
+    font-size: 1.5rem;
+}
+.service:hover p{
     color: white;
-}
-
-.service2:hover{
-    background-color: #00a8a850;
-    color: white;
-    padding: 0.7rem;
-}
-.service3:hover{
-    background-color: #03444a64;
-    color: white;
-    padding: 0.7rem;
-}
-.service4:hover{
-    background-color: #d5a09e5e;
-    color: white;
-    padding: 0.7rem;
-}
-.service1 h1{
-    color:#03444A;
-    margin: 1rem;
-}
-.service2 h1{
-    color: #00A8A8;
-    margin: 1rem;
-}
-.service3 h1{
-    color: #9AD3DA;
-    margin: 1rem;
-}
-.service4 h1{
-    color: #D5A09E;
-    margin: 1rem;
 }
