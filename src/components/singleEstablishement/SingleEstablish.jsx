@@ -2,16 +2,14 @@ import React from 'react';
 import classes from './SingleEstablish.module.css';
 import Dar from './Dar-Kenza.jpg';
 import agent from './agent.jpg';
-import Map from '../../map/Map';
-import Navbar from '../navbar/Navbar'
+import Map from '../../map/Map'; 
 import Leisure from '../leisure/leisure';
 import Footer from '../footer/Footer';
 import Contact from '../form/form';
 
 export default function SingleEstablish(){
     return(
-        <div className={classes.singleContainer}>
-            <Navbar />
+        <div className={classes.singleContainer}> 
             <div className={classes.header}>
                 <div className={classes.vl}>
                     <h3>Dar Kenza</h3>

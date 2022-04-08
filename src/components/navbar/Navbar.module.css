@@ -1,10 +1,11 @@
 .navbar {
-    padding: 20px;
+    padding:  20px  ;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 0 auto;
+    margin:  auto;
     color: transparent;
+    background-color: #fff;
     backdrop-filter: blur(2px);
    
   }
@@ -22,16 +23,21 @@
   .navbar a:hover {
     color: #00A8A8;
   }
-  h3{
+  h4{
     color: #00A8A8;
   }
   .content {
-    max-width: 600px;
+    max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
   }
   .link-button{
     color: 'white';
-    background-color: '#f1356d';
+    background-color: "#f1356d";
     border-radius: '8px' 
+  }
+  .register-button{
+    padding: 15px 5px ;
+    background-color:#D5A09E ;
+    font-size: 2rem;
   }
