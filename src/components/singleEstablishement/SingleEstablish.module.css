@@ -1,7 +1,8 @@
-.singleContainer{
+.singleContainer {
     color: #D5A09E;
 }
-.header{
+
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -10,27 +11,32 @@
     letter-spacing: 3px;
     margin-bottom: 3rem;
     margin-top: 5rem;
-
 }
-.img img{
+
+.img img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 60%;
     margin-bottom: 3rem;
 }
-.p{
+
+.p {
     font-size: 1rem;
     width: 80%;
 }
 
-p, li,h5{
+p,
+li,
+h5 {
     color: #03444A;
 }
-.body{
+
+.body {
     margin: 5rem;
 }
-button{
+
+button {
     background-color: whitesmoke;
     border-radius: 6px;
     border: 3px solid cadetblue;
@@ -38,65 +44,79 @@ button{
     color: cadetblue;
     font-weight: bold;
 }
-button:hover{
+
+button:hover {
     background-color: cadetblue;
     color: whitesmoke;
 }
-.row{
+
+.row {
     display: flex;
     flex-direction: row;
     margin: 2rem;
 }
-.colum{
+
+.colum {
     display: flex;
     flex-direction: row;
 }
-.agent h2, .agent hr{
+
+.agent h2,
+.agent hr {
     margin-left: 2rem;
 }
-.agentbody{
+
+.agentbody {
     display: flex;
     flex-direction: row;
     text-align: center;
     justify-content: space-between;
     margin-top: 2rem;
 }
-.agentbody div{
-    
+
+.agentbody div {
     width: 33%;
 }
-.image{
+
+.image {
     width: 60%;
 }
-.agentbody img{
+
+.agentbody img {
     width: 200px;
 }
-.map{
+
+.map {
     margin-top: 5rem;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
-.hrEst{
+
+.hrEst {
     width: 4rem;
     border-top: 2px solid #00A8A8;
     color: #00A8A8;
 }
-h2{
+
+h2 {
     font-weight: bold;
 }
+
 .vl {
     border-left: 3px solid #03444A;
     height: 80px;
     padding-left: 30px;
-  }
-.contactAgent{
+}
+
+.contactAgent {
     text-align: justify;
     margin-left: 0.7rem;
     margin-bottom: 1rem;
-    color:#00A8A8;
+    color: #00A8A8;
 }
-.map{
+
+.map {
     margin-bottom: 5rem;
 }

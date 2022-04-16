@@ -3,7 +3,7 @@ import Acceuil from './pages/Acceuil/Acceuil';
 import {BrowserRouter, Routes,Route} from 'react-router-dom';
 import SingleEstablish from './components/singleEstablishement/SingleEstablish';  
 import Navbar from './components/navbar/Navbar';
-import LoginForm from './pages/authForms/loginForm';
+import LoginForm from './pages/authForms/LoginForm';
 import RegisterForm from './pages/authForms/RegisterForm';
 import PlacesList from './components/places/PlacesList';
 
@@ -13,7 +13,7 @@ function App() {
      <BrowserRouter>
      <div className="App"> 
      <Navbar />
-       <div>  
+       < >  
          <Routes>
             <Route exact path="/" element={<Acceuil   />}  /> 
             <Route exact path="/login" element={<LoginForm   />}  /> 
@@ -24,7 +24,7 @@ function App() {
             <Route exact path="/shoot" element={<PlacesList type ="ipsum" />}  />
             {/* <Route exact path="/projects/:id" element={<ShowPlaces/>}  />  */}
          </Routes>
-       </div>
+       </ >
      </div>
      </BrowserRouter>   
   );

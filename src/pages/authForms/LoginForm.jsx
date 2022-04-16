@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
-import axios from 'axios'
+import axios from 'axios' 
+import { ClassNames } from '@emotion/react'
+import classes from './auth.module.css';
 
-
+// import './auth.css';
 const LoginForm = () => {
   const[details,setDetails]=useState({email:"",password:""})
   
@@ -22,8 +24,8 @@ const LoginForm = () => {
   
 
     return (
-      <div> 
-        <form className='auth' onSubmit={submitHandler}>
+      <div className={classes.auth}> 
+        <form  onSubmit={submitHandler}>
             <div className="form-group">
               <h2>Page de connexion  </h2>  
               <label>Email:</label>
