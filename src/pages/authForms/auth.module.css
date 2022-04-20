@@ -3,27 +3,24 @@ html {
     font-size: 100%;
 }
 
-.container {
-    height: 80%;
-}
 
-body {
-    background: #D5A09E;
+.container {
+    padding: 3rem;
     background: linear-gradient(110deg, #D5A09E 0%, #9AD3DA 100%);
     font-family: "work sans";
 }
 
 .loginform {
-    background: rgb(34, 193, 195);
     font-size: 100%;
     max-width: 500px;
     min-width: 300px;
     max-height: 700px;
-    margin: 100px auto;
+    margin: auto;
     width: 30%;
     height: 60%;
     background-color: #FFFFFF;
     border-radius: 25px;
+    
 }
 
 .headerTitle {

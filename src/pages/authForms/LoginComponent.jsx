@@ -1,3 +1,6 @@
+import LoginForm from "./LoginForm";
+import React from 'react';
+
 const mode = 'login'; 
 class LoginComponent extends React.Component {
     constructor(props) {
@@ -29,3 +32,4 @@ class LoginComponent extends React.Component {
         )
     }
 }
+export default LoginComponent;
