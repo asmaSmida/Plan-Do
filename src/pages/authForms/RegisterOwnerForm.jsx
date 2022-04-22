@@ -3,9 +3,10 @@ import React, { state, useState } from 'react'
 import axios from 'axios'
 import { ClassNames } from '@emotion/react';
 import classes from './auth.module.css';
-// import './auth.css';
-export default function RegisterForm() {
-  const [details, setDetails] = useState({ name: "", email: "", password: "" })
+import { Alert } from 'reactstrap';  
+ 
+export default function RegisterOwnerForm() {
+  const [details, setDetails] = useState({ name: "", email: "",estate:"",telephone:"",region:"", password: "" })
   const [error, setError] = useState([]);
   const submitHandler = (e) => {
     e.preventDefault();
@@ -14,7 +15,10 @@ export default function RegisterForm() {
     const registred = {
       name: details.name,
       email: details.email,
-      password: details.password
+      password: details.password,
+      estate:details.estate,
+      telephone:details.telephone,
+      region:details.region,
     }
     axios.post('http://localhost:5000/plando/auth/register', registred)
       .then(res => { 
@@ -31,16 +35,19 @@ export default function RegisterForm() {
           window.location.assign('/')
       })
   }
-
+  const [bodyClick, setBodyClick] =  useState(false);
 
 
 
   return ( 
-    <div className={classes.container}> 
-      <div className={classes.loginform}>
+    
+    <div className={classes.container}>   
+      <div className={classes.registerform}>
         <h2 className={classes.headerTitle}>Inscription</h2>
+ 
         <form onSubmit={submitHandler} method='POST'>
           <div>
+            
             <div className={classes.row}>
               <label>name:</label>
               <input onChange={e => setDetails({ ...details, name: e.target.value })} value={details.name} type="name" className="form-control" name="name" id="name" placeholder='name' aria-describedby="nameHelpId" />
@@ -49,6 +56,21 @@ export default function RegisterForm() {
             <div className={classes.row}>
               <label>Email:</label>
               <input onChange={e => setDetails({ ...details, email: e.target.value })} value={details.email} type="email" className="form-control" name="email" id="email" placeholder="email" aria-describedby="emailHelpId" />
+
+            </div>
+            <div className={classes.row}>
+              <label>Estate:</label>
+              <input onChange={e => setDetails({ ...details, estate: e.target.value })} value={details.estate} type="estate" className="form-control" name="estate" id="estate" placeholder="estate" aria-describedby="estateHelpId" />
+
+            </div>
+            <div className={classes.row}>
+              <label>Telephone:</label>
+              <input onChange={e => setDetails({ ...details, telephone: e.target.value })} value={details.telephone} type="telephone" className="form-control" name="telephone" id="telephone" placeholder="telephone" aria-describedby="telephoneHelpId" />
+
+            </div>
+            <div className={classes.row}>
+              <label>Region:</label>
+              <input onChange={e => setDetails({ ...details, region: e.target.value })} value={details.region} type="region" className="form-control" name="region" id="region" placeholder="region" aria-describedby="regionHelpId" />
 
             </div>
             <div className={classes.row}>

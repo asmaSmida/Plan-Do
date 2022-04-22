@@ -4,22 +4,34 @@ html {
 }
 
 
-.container {
-    padding: 3rem;
+.container { 
+    padding: 5rem;
     background: linear-gradient(110deg, #D5A09E 0%, #9AD3DA 100%);
     font-family: "work sans";
 }
 
+.registerform {
+    font-size: 100%;
+    max-width: 500px;
+    min-width: 300px; 
+    margin:   auto;
+    width: 30%; 
+    background-color: #FFFFFF;
+    border-radius: 25px;
+
+    
+}
 .loginform {
     font-size: 100%;
     max-width: 500px;
     min-width: 300px;
     max-height: 700px;
-    margin: auto;
+    margin: 5rem auto;
     width: 30%;
     height: 60%;
     background-color: #FFFFFF;
     border-radius: 25px;
+
     
 }
 
