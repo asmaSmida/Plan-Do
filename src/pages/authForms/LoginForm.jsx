@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
-import axios from 'axios' 
-import { ClassNames } from '@emotion/react'
+import axios from 'axios'  
 import classes from './auth.module.css';
+import { Alert } from 'react-bootstrap'; 
 
 // import './auth.css';
 const LoginForm = () => {
   const[details,setDetails]=useState({email:"",password:""})
+  const [error, setError] = useState([]);
+  const [show, setShow] = useState(false);
   
   const submitHandler =(e)=>{
     e.preventDefault();
@@ -17,8 +19,13 @@ const LoginForm = () => {
     axios.post('http://localhost:5000/plando/auth/login',registred)
     .then(res=>{console.log(res);
       window.location.assign('/') })
-    .catch(err=>console.log(err.response.data.message)) 
-    //
+    // .catch(err=>console.log(err.response.data.message)) 
+    .catch(err => { 
+      console.log(err.response);
+      setShow(true);
+      setError(err.response.data.message);
+    
+  })
 
   }
   
@@ -40,6 +47,9 @@ const LoginForm = () => {
       //   </form>
       // </div>
       <div className={classes.container}> 
+      <Alert show={show} variant="danger">
+        {error}
+      </Alert>
       <div className={classes.loginform}>
         <h2 className={classes.headerTitle}>Connexion</h2>
         <form onSubmit={submitHandler} method='POST'>

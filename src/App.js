@@ -7,13 +7,13 @@ import LoginForm from './pages/authForms/LoginForm';
 import RegisterForm from './pages/authForms/RegisterForm';
 import PlacesList from './components/places/PlacesList';
 import RegisterOwnerForm from './pages/authForms/RegisterOwnerForm';
-
- 
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import NavbarComp from './components/navbar/NavbarComp';
 function App() {
   return (   
      <BrowserRouter>
-     <div className="App"> 
-     <Navbar />
+     <div className="App">  
+     <NavbarComp/>
        < >  
          <Routes>
             <Route exact path="/" element={<Acceuil   />}  /> 
