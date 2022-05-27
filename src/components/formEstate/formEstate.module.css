@@ -1,0 +1,15 @@
+.formEstate {
+    padding: 3rem;
+    background: linear-gradient(110deg, #D5A09E 0%, #9AD3DA 100%);
+    font-family: "work sans";
+    font-size: 100%;
+    max-width: 30rem;
+    min-width: 20rem; 
+    margin:   auto;
+    width: 50%; 
+    border-radius: 25px;
+    height: 80%;
+    margin: auto;
+    vertical-align: middle;
+    color: #03444A;
+}
