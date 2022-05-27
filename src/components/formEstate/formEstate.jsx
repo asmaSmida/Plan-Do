@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios';
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -21,7 +22,9 @@ const defaultValues = {
         plage: false,
         randonnee: false,
     },
+    image: ""
 };
+
 const FormEstate = () => {
     const [formValues, setFormValues] = useState(defaultValues);
     const handleInputChange = (e) => {
@@ -33,9 +36,38 @@ const FormEstate = () => {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(formValues);
+        axios.post('http://localhost:5000/plando/estate/add-estate', formValues)
+            .then(res => {
+                console.log(formValues);
+                window.location.assign('/')
+            })
+            .catch(err => {
+                console.log(err.response);
+                // setShow(true);
+                // setError(err.response.data.message);
+
+            })
     };
-    ;
+
+    // const handleFileChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setFormValues({
+    //         ...formValues,
+    //         [name]: value,
+    //     });
+    //     if (e.target.input.files.length) {
+    //         const upload_file = e.target.files[0];
+    //         const formData = new FormData();
+    //         formData.append('file', upload_file);
+
+    //         const request = axios.post(this.props.cfg_url + '/upload', formData)
+    //             .then(function (response) {
+    //                 console.log('successfully uploaded', upload_file);
+    //             });
+    //     } else {
+    //         console.log('You need to select a file');
+    //     }
+    // };
     return (
         <form onSubmit={handleSubmit} className={classes.formEstate}>
             <Grid container alignItems="center" justify="center" direction="column">
@@ -87,13 +119,23 @@ const FormEstate = () => {
                     />
                 </Grid>
                 <br></br>
+                <Grid item>
+                    <TextField
+                        id="image_input"
+                        type="file"
+                        name="file"
+                        value={formValues.image}
+                        onChange={handleInputChange} />
+                </Grid>
+                <br></br>
                 <Grid container alignItems="center" justify="center" direction="row">
                     <FormGroup>
                         <FormControlLabel
                             label="Piscine"
                             control={
                                 <Checkbox
-                                    defaultChecked = {false}
+                                    value={formValues.leisure.piscine}
+                                    onChange={e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, piscine: true } })}
                                     sx={{
                                         color: pink[800],
                                         '&.Mui-checked': {
@@ -107,7 +149,8 @@ const FormEstate = () => {
                             label="Plage"
                             control={
                                 <Checkbox
-                                    defaultChecked = {false}
+                                    value={formValues.leisure.plage}
+                                    onChange={e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, plage: true } })}
                                     sx={{
                                         color: pink[800],
                                         '&.Mui-checked': {
@@ -121,7 +164,8 @@ const FormEstate = () => {
                             label="Restaurant"
                             control={
                                 <Checkbox
-                                    defaultChecked = {false}
+                                    value={formValues.leisure.restaurant}
+                                    onChange={e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, restaurant: true } })}
                                     sx={{
                                         color: pink[800],
                                         '&.Mui-checked': {
@@ -135,7 +179,8 @@ const FormEstate = () => {
                             label="Hammam"
                             control={
                                 <Checkbox
-                                    defaultChecked = {false}
+                                    value={formValues.leisure.hammam}
+                                    onChange={e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, hammam: true } })}
                                     sx={{
                                         color: pink[800],
                                         '&.Mui-checked': {
@@ -149,7 +194,8 @@ const FormEstate = () => {
                             label="Patrimoine"
                             control={
                                 <Checkbox
-                                    defaultChecked = {false}
+                                    onChange={e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, patrimoine: true } })}
+                                    value={formValues.leisure.patrimoine}
                                     sx={{
                                         color: pink[800],
                                         '&.Mui-checked': {
@@ -159,11 +205,12 @@ const FormEstate = () => {
                                 />
                             }
                         />
-                         <FormControlLabel
+                        <FormControlLabel
                             label="Randonnée"
                             control={
                                 <Checkbox
-                                    defaultChecked = {false}
+                                    value={formValues.leisure.randonnee}
+                                    onChange={e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, randonnee: true } })}
                                     sx={{
                                         color: pink[800],
                                         '&.Mui-checked': {

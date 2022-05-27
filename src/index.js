@@ -7,7 +7,7 @@ import FormEstate from './components/formEstate/formEstate';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <FormEstate />
   </React.StrictMode>,
   document.getElementById('root')
 );
