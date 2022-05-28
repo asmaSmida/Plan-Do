@@ -9,7 +9,7 @@ const NavbarComp = () => {
       <style type="text/css">
         {`
     .bg-custom   { 
-      background: linear-gradient(140deg, #d5a09ed9 80%, #E7E7E0c7  );
+      background: linear-gradient( to right,#03444A , #9AD3DA );
     } 
     .navbar-custom .navbar-brand ,
     .navbar-custom .navbar-toggler,

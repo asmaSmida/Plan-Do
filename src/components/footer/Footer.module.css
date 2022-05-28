@@ -1,5 +1,5 @@
 .footer{
-    background-color: #03444A;
+    background: linear-gradient( to right,#03444A, #03444ae1 );
     height:20%;
     margin-bottom: -10px;
   }
