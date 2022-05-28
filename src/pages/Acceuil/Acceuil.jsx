@@ -1,17 +1,28 @@
 import React from 'react';
-import  classes  from './Acceuil.module.css';
-import Whoarewe from '../../components/whoarewe/Whoarewe';
-import FirstImage from '../../components/firstPageImage/FirstImage';
+import { makeStyles } from '@material-ui/core/styles';
+import { CssBaseline } from '@material-ui/core';
+import Header from '../../components/home/Header';
+import PlaceToVisit from '../../components/home/Services';
 import Footer from '../../components/footer/Footer';
-import Services from '../../components/services/services';
+
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      minHeight: '100vh',
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/bg.jpg'})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'contain',
+    },
+  }));
 
 export default function Acceuil(){
-    return(
-        <div className={classes.container}>
-            <FirstImage />
-            <Whoarewe/>
-            <Services />
-            <Footer />
-        </div>
+    const classes = useStyles();
+    return (
+      <div className={classes.root}>
+        <CssBaseline />
+        <Header />
+        <PlaceToVisit />
+        <Footer/>
+      </div>
     );
 }
