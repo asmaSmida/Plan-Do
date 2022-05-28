@@ -4,6 +4,21 @@ import './Navbar.module.css';
 import React from "react";
 import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap';
 const NavbarComp = () => {
+
+  const isAuth = () => {
+    if (localStorage.getItem("token")) return true
+    else return false;
+  }
+
+  const signout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("sign");
+    window.location.reload();
+    window.location.assign("/")
+  }
+  const sign = (event) => {
+    localStorage.setItem("sign", event.target.innerText)
+  }
   return (
     <>
       <style type="text/css">
@@ -37,21 +52,36 @@ const NavbarComp = () => {
           <Navbar.Brand as={Link} to={"/"}>PLAN&DO</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto text-primary" variant="custom" > 
+            <Nav className="me-auto text-primary" variant="custom" >
               <Nav.Link eventKey="1" as={Link} to={"/"}>Accueil</Nav.Link>
               <Nav.Link as={Link} to={"/single"}>Kenza Establishment</Nav.Link>
               <Nav.Link as={Link} to={"/Annif"}>Anniversaire</Nav.Link>
               <Nav.Link as={Link} to={"/teamBuilding"}>TeamBuilding</Nav.Link>
-              <Nav.Link as={Link} to={"/shoot"}>PhotoShoot</Nav.Link> 
+              <Nav.Link as={Link} to={"/shoot"}>PhotoShoot</Nav.Link>
             </Nav>
             <Nav>
-              <NavDropdown  title="connexion" id="collasible-nav-dropdown">
-                <NavDropdown.Item as={Link} to={"/register"}>s'inscrire</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to={"/register-owner"}>Devenir Hote</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item as={Link} to={"/login"}>Se connecter</NavDropdown.Item> 
-              </NavDropdown>
-              
+              {isAuth() ? (
+                <Nav className="me-auto text-primary" variant="custom" >
+                  {(localStorage.getItem("sign") === "SignIn Client") || (localStorage.getItem("sign") === "Sign up Client") ?
+                    ( <Nav.Link as={Link} to={"/client-profile"}  >Profile</Nav.Link> ) :
+
+                    (<div>
+                      <Nav.Link as={Link} to={"/host-profile"} style={{float:"right"}}>Profile</Nav.Link> 
+                      <Nav.Link as={Link} to={"/shoot"}style={{float:"left"}}>Add Estate</Nav.Link>
+
+                    </div>)
+                  }
+                  <Nav.Link as={Link} to={"/"} onClick={signout}>LogOut</Nav.Link>
+                </Nav>
+
+              ) : (
+                <NavDropdown title="connexion" id="collasible-nav-dropdown">
+                  <NavDropdown.Item as={Link} to={"/register"}>s'inscrire</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to={"/register-owner"}>Devenir Hote</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item as={Link} to={"/login"}>Se connecter</NavDropdown.Item>
+                </NavDropdown>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -31,7 +31,7 @@ const Input = ({ id, type, label, disabled }) => (
     <input className="form-group__input" type={type} id={id} placeholder={label} disabled={disabled}/>
 );
 
-const App = () => (
+const Appl = () => (
     <div className={`app app--is-${mode}`}>
         <LoginComponent
             mode={mode}
@@ -45,5 +45,5 @@ const App = () => (
     </div>
 );
 
-ReactDOM.render( <App/>, document.getElementById("app"));
+ReactDOM.render( <Appl/>, document.getElementById("app"));
 

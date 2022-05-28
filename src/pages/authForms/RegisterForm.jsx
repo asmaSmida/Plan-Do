@@ -19,6 +19,8 @@ export default function RegisterForm() {
     axios.post('http://localhost:5000/plando/auth/register-user', registred)
       .then(res => {
         console.log(res);
+        localStorage.setItem("token", res.data.token);
+        // window.location.reload();
         window.location.assign('/')
       })
       .catch(err => { 

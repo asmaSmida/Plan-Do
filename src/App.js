@@ -9,6 +9,8 @@ import PlacesList from './components/places/PlacesList';
 import RegisterOwnerForm from './pages/authForms/RegisterOwnerForm';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import NavbarComp from './components/navbar/NavbarComp';
+import LoginComponent from './pages/authForms/LoginComponent';
+import FormEstate from './components/formEstate/formEstate';
 function App() {
   return (   
      <BrowserRouter>
@@ -16,6 +18,7 @@ function App() {
      <NavbarComp/>
        < >  
          <Routes>
+            <Route exact path="/add-estate" element={<FormEstate />}  /> 
             <Route exact path="/" element={<Acceuil   />}  /> 
             <Route exact path="/login" element={<LoginForm   />}  /> 
             <Route exact path="/register" element={<RegisterForm />}  />  
