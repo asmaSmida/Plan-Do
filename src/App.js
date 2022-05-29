@@ -4,6 +4,7 @@ import {BrowserRouter, Routes,Route} from 'react-router-dom';
 import SingleEstablish from './components/singleEstablishement/SingleEstablish';  
 import Navbar from './components/navbar/Navbar';
 import LoginForm from './pages/authForms/LoginForm';
+import LoginHostForm from './pages/authForms/LoginHostForm';
 import RegisterForm from './pages/authForms/RegisterForm';
 import PlacesList from './components/places/PlacesList';
 import RegisterOwnerForm from './pages/authForms/RegisterOwnerForm';
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/add-estate" element={<FormEstate />}  /> 
             <Route exact path="/" element={<Acceuil   />}  /> 
             <Route exact path="/login" element={<LoginForm   />}  /> 
+            <Route exact path="/login-host" element={<LoginHostForm   />}  /> 
             <Route exact path="/register" element={<RegisterForm />}  />  
             <Route exact path="/register-owner" element={<RegisterOwnerForm />}  />  
             <Route exact path="/single" element={<SingleEstablish type =" " />}  />

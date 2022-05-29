@@ -24,7 +24,7 @@ const NavbarComp = () => {
       <style type="text/css">
         {`
     .bg-custom   { 
-      background: linear-gradient( to right,#03444A , #9AD3DA );
+      background: linear-gradient( to right,#D5A09E 3.5rem , #E7E7E0 );
     } 
     .navbar-custom .navbar-brand ,
     .navbar-custom .navbar-toggler,
@@ -67,7 +67,7 @@ const NavbarComp = () => {
 
                     (<div>
                       <Nav.Link as={Link} to={"/host-profile"} style={{float:"right"}}>Profile</Nav.Link> 
-                      <Nav.Link as={Link} to={"/shoot"}style={{float:"left"}}>Add Estate</Nav.Link>
+                      <Nav.Link as={Link} to={"/add-estate"}style={{float:"left"}}>Add Estate</Nav.Link>
 
                     </div>)
                   }
@@ -79,7 +79,8 @@ const NavbarComp = () => {
                   <NavDropdown.Item as={Link} to={"/register"}>s'inscrire</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to={"/register-owner"}>Devenir Hote</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item as={Link} to={"/login"}>Se connecter</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to={"/login"}>connexion client</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to={"/login-host"}>connexion Hote </NavDropdown.Item>
                 </NavDropdown>
               )}
             </Nav>

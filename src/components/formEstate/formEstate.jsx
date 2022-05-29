@@ -7,7 +7,14 @@ import { FormControlLabel, FormGroup } from "@material-ui/core";
 import { pink } from '@mui/material/colors';
 import Checkbox from '@mui/material/Checkbox';
 import classes from './formEstate.module.css';
-
+const FormEstate = () => {
+    
+const [checkedpiscine,setChekedPiscine]=useState(false);
+const [checkedrestaurant,setChekedRestaurant]=useState(false);
+const [checkedhammam,setChekedHammam]=useState(false);
+const [checkedplage,setChekedPlage]=useState(false);
+const [checkedpatrimoine,setChekedPatrimoine]=useState(false);
+const [checkedrandonnee,setChekedRandonnee]=useState(false);
 const defaultValues = {
     nom: "",
     description: "",
@@ -15,7 +22,7 @@ const defaultValues = {
     summary: "",
     amenities: "",
     leisure: {
-        piscine: false,
+        piscine: checkedpiscine,
         restaurant: false,
         hammam: false,
         patrimoine: false,
@@ -25,24 +32,43 @@ const defaultValues = {
     image: ""
 };
 
-const FormEstate = () => {
     const [formValues, setFormValues] = useState(defaultValues);
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+        console.log("value: "+value, "target: ",name, "   ",e.target);
         setFormValues({
             ...formValues,
             [name]: value,
         });
+        console.log(formValues);
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:5000/plando/estate/add-estate', formValues)
+        const job = {
+            nom: formValues.nom,
+            description: formValues.description,
+            localisation: formValues.localisation,
+            summary: formValues.summary,
+            amenities: formValues.amenities,
+            leisure: {
+                piscine: checkedpiscine,
+                // formValues.leisure.piscine,
+                restaurant: formValues.leisure.restaurant,
+                hammam: formValues.leisure.hammam,
+                patrimoine: formValues.leisure.patrimoine,
+                plage: formValues.leisure.plage,
+                randonnee: formValues.leisure.randonnee,
+            },
+            image: formValues.image
+        }
+        axios.post('http://localhost:5000/plando/estate/add-estate', job)
             .then(res => {
                 console.log(formValues);
                 window.location.assign('/')
             })
             .catch(err => {
                 console.log(err.response);
+                console.log(formValues);
                 // setShow(true);
                 // setError(err.response.data.message);
 
@@ -97,7 +123,7 @@ const FormEstate = () => {
                         name="localisation"
                         label="localisation"
                         value={formValues.localisation}
-                        onChange={handleInputChange}
+                        onChange={e=>handleInputChange(e)}
                     />
                 </Grid>
                 <Grid item>
@@ -134,8 +160,15 @@ const FormEstate = () => {
                             label="Piscine"
                             control={
                                 <Checkbox
-                                    value={formValues.leisure.piscine}
-                                    onChange={e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, piscine: true } })}
+                                    checked={checkedpiscine}
+                                    onChange={e => {
+                                        setChekedPiscine(!checkedpiscine) 
+                                        setFormValues(
+                                            {
+                                                ...formValues,
+                                                leisure: { ...formValues.leisure, piscine: !checkedpiscine }
+                                            })
+                                    }}
                                     sx={{
                                         color: pink[800],
                                         '&.Mui-checked': {
@@ -148,9 +181,17 @@ const FormEstate = () => {
                         <FormControlLabel
                             label="Plage"
                             control={
-                                <Checkbox
-                                    value={formValues.leisure.plage}
-                                    onChange={e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, plage: true } })}
+                                <Checkbox 
+                                    checked={checkedplage}
+                                    onChange={e => {
+                                        setChekedPlage(!checkedplage) 
+                                        setFormValues(
+                                            {
+                                                ...formValues,
+                                                leisure: { ...formValues.leisure, plage: !checkedplage }
+                                            })
+                                    }}
+                                    // {e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, plage: e.target.value } })}
                                     sx={{
                                         color: pink[800],
                                         '&.Mui-checked': {
@@ -163,9 +204,16 @@ const FormEstate = () => {
                         <FormControlLabel
                             label="Restaurant"
                             control={
-                                <Checkbox
-                                    value={formValues.leisure.restaurant}
-                                    onChange={e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, restaurant: true } })}
+                                <Checkbox 
+                                    checked={checkedrestaurant}
+                                    onChange={e => {
+                                        setChekedRestaurant(!checkedrestaurant) 
+                                        setFormValues(
+                                            {
+                                                ...formValues,
+                                                leisure: { ...formValues.leisure, restaurant: !checkedrestaurant }
+                                            })
+                                    }}
                                     sx={{
                                         color: pink[800],
                                         '&.Mui-checked': {
@@ -179,8 +227,16 @@ const FormEstate = () => {
                             label="Hammam"
                             control={
                                 <Checkbox
-                                    value={formValues.leisure.hammam}
-                                    onChange={e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, hammam: true } })}
+                                    // value={formValues.leisure.hammam}
+                                    checked={checkedhammam}
+                                    onChange={e => {
+                                        setChekedHammam(!checkedhammam) 
+                                        setFormValues(
+                                            {
+                                                ...formValues,
+                                                leisure: { ...formValues.leisure, hammam: !checkedhammam }
+                                            })
+                                    }}
                                     sx={{
                                         color: pink[800],
                                         '&.Mui-checked': {
@@ -194,9 +250,16 @@ const FormEstate = () => {
                             label="Patrimoine"
                             control={
                                 <Checkbox
-                                    onChange={e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, patrimoine: true } })}
-                                    value={formValues.leisure.patrimoine}
-                                    sx={{
+                                checked={checkedpatrimoine}
+                                onChange={e => {
+                                    setChekedPatrimoine(!checkedpatrimoine) 
+                                    setFormValues(
+                                        {
+                                            ...formValues,
+                                            leisure: { ...formValues.leisure, patrimoine: !checkedpatrimoine }
+                                        })
+                                }}
+                                sx={{
                                         color: pink[800],
                                         '&.Mui-checked': {
                                             color: pink[600],
@@ -209,9 +272,16 @@ const FormEstate = () => {
                             label="Randonnée"
                             control={
                                 <Checkbox
-                                    value={formValues.leisure.randonnee}
-                                    onChange={e => setFormValues({ ...formValues, leisure: { ...formValues.leisure, randonnee: true } })}
-                                    sx={{
+                                checked={checkedrandonnee}
+                                onChange={e => {
+                                    setChekedRandonnee(!checkedrandonnee) 
+                                    setFormValues(
+                                        {
+                                            ...formValues,
+                                            leisure: { ...formValues.leisure, randonnee: !checkedrandonnee }
+                                        })
+                                }}
+                                sx={{
                                         color: pink[800],
                                         '&.Mui-checked': {
                                             color: pink[600],
