@@ -1,4 +1,5 @@
 import ShowItem from "./ShowItem";
+//import Pagination from 'react-bootstrap/Pagination';
 
 const ShowList = ({ places, type, title }) => {
   return (
@@ -10,6 +11,15 @@ const ShowList = ({ places, type, title }) => {
             <ShowItem place={place} />
           </div>
         )}
+         {/* <Pagination>
+              <Pagination.Prev />
+              <Pagination.Ellipsis />
+              <Pagination.Item>{3}</Pagination.Item>
+              <Pagination.Item>{4}</Pagination.Item>
+              <Pagination.Item>{5}</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Next />
+            </Pagination> */}
       </div>
     </div>
   );
