@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       flexDirection: 'column',
     },
-    marginTop: '5rem'
+    marginTop: '2.7rem'
   },
 }));
 export default function () {

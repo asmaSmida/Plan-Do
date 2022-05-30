@@ -5,11 +5,13 @@
     font-size: 100%;
     max-width: 30rem;
     min-width: 20rem; 
-    margin:   auto;
+    margin:  5rem auto;
     width: 50%; 
     border-radius: 25px;
     height: 80%;
-    margin: auto;
     vertical-align: middle;
     color: #03444A;
+}
+.formEstate h2{
+    text-align: center;
 }

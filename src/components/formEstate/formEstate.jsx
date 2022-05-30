@@ -21,24 +21,23 @@ const FormEstate = () => {
         localisation: "",
         summary: "",
         amenities: "",
+        image: "",
         piscine: checkedpiscine,
         restaurant: false,
         hammam: false,
         patrimoine: false,
         plage: false,
         randonnee: false,
-        image: ""
+        
     };
 
     const [formValues, setFormValues] = useState(defaultValues);
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        console.log("value: " + value, "target: ", name, "   ", e.target);
         setFormValues({
             ...formValues,
             [name]: value,
         });
-        console.log(formValues);
     };
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -48,6 +47,7 @@ const FormEstate = () => {
             localisation: formValues.localisation,
             summary: formValues.summary,
             amenities: formValues.amenities,
+            image: formValues.image,
             piscine: checkedpiscine,
             // formValues.piscine,
             restaurant: formValues.restaurant,
@@ -55,7 +55,7 @@ const FormEstate = () => {
             patrimoine: formValues.patrimoine,
             plage: formValues.plage,
             randonnee: formValues.randonnee,
-            image: formValues.image
+            
         }
         const token = localStorage.getItem('token');
 
@@ -66,7 +66,7 @@ const FormEstate = () => {
         })
             .then(res => {
                 console.log(estate);
-                // window.location.assign('/')
+                window.location.assign('/')
             })
             .catch(err => {
                 console.log(err.response);
@@ -77,27 +77,33 @@ const FormEstate = () => {
             })
     };
 
-    // const handleFileChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setFormValues({
-    //         ...formValues,
-    //         [name]: value,
-    //     });
-    //     if (e.target.input.files.length) {
-    //         const upload_file = e.target.files[0];
-    //         const formData = new FormData();
-    //         formData.append('file', upload_file);
-
-    //         const request = axios.post(this.props.cfg_url + '/upload', formData)
-    //             .then(function (response) {
-    //                 console.log('successfully uploaded', upload_file);
-    //             });
-    //     } else {
-    //         console.log('You need to select a file');
-    //     }
-    // };
+    const handleFileChange = (e) => {
+        const { name, value } = e.target;
+        setFormValues({
+            ...formValues,
+            [name]: value,
+        });
+        if (e.target.input.files.length) {
+            const upload_file = e.target.files[0];
+            const fileName = e.target.files[0].name;
+            const formData = new FormData();
+            formData.append('file', upload_file); 
+            formData.append('fileName', fileName);
+            const request = axios.post("http://localhost:3000/upload", formData)
+                .then(function (response) {
+                    console.log('successfully uploaded', upload_file);
+                });
+                setFormValues({
+                    ...formValues,
+                    [name]: formData,
+                });
+        } else {
+            console.log('You need to select a file');
+        }
+    };
     return (
         <form onSubmit={handleSubmit} className={classes.formEstate}>
+            <h2>Adding your Estate</h2>
             <Grid container alignItems="center" justify="center" direction="column">
                 <Grid item>
                     <TextField
