@@ -1,18 +1,16 @@
 import ShowItem from "./ShowItem";
-import classes from './places.module.css';
 
 const ShowList = ({ places, type, title }) => {
   return (
-    <div className={classes.container}>
-
-<div className={classes.placeLists}>
-      <h2>{title}</h2>
-      <div className={classes.placeList}>
-      {places.filter(place => place.body.includes(type)).map(place =>
-        <ShowItem place={place} />
-      )}
+    <div className='container-fluid d-flex justify-content-center'>
+      <div className='row'>
+        <h2>{title}</h2>
+        {places.filter(place => place.body.includes(type)).map(place =>
+          <div className='col-lg-4 col-md-6 col-sm-12'>
+            <ShowItem place={place} />
+          </div>
+        )}
       </div>
-    </div>
     </div>
   );
 }

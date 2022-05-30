@@ -2,7 +2,6 @@
 import Acceuil from './pages/Acceuil/Acceuil';
 import {BrowserRouter, Routes,Route} from 'react-router-dom';
 import SingleEstablish from './components/singleEstablishement/SingleEstablish';  
-import Navbar from './components/navbar/Navbar';
 import LoginForm from './pages/authForms/LoginForm';
 import LoginHostForm from './pages/authForms/LoginHostForm';
 import RegisterForm from './pages/authForms/RegisterForm';
@@ -10,8 +9,8 @@ import PlacesList from './components/places/PlacesList';
 import RegisterOwnerForm from './pages/authForms/RegisterOwnerForm';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import NavbarComp from './components/navbar/NavbarComp';
-import LoginComponent from './pages/authForms/LoginComponent';
 import FormEstate from './components/formEstate/formEstate';
+
 function App() {
   return (   
      <BrowserRouter>
