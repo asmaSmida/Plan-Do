@@ -23,6 +23,8 @@ export default function RegisterOwnerForm() {
     axios.post('http://localhost:5000/plando/auth/register-host', registred)
       .then(res => {
         console.log(res);
+        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("sign", "host");
         window.location.assign('/')
       })
       .catch(err => {

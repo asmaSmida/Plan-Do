@@ -19,8 +19,11 @@ const LoginForm = () => {
     axios.post('http://localhost:5000/plando/auth/login',registred)
     .then(res=>{console.log(res);
       localStorage.setItem("token", res.data.token);
+      localStorage.setItem("sign", "client");
       // window.location.reload();
-        window.location.assign('/')  }) 
+        window.location.assign('/') 
+        console.log("client");
+       }) 
     .catch(err => { 
       console.log(err.response);
       setShow(true);

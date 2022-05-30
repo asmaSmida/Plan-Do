@@ -20,6 +20,7 @@ export default function RegisterForm() {
       .then(res => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("sign", "client");
         // window.location.reload();
         window.location.assign('/')
       })

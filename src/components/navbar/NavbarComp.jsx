@@ -62,7 +62,9 @@ const NavbarComp = () => {
             <Nav>
               {isAuth() ? (
                 <Nav className="me-auto text-primary" variant="custom" >
-                  {(localStorage.getItem("sign") === "SignIn Client") || (localStorage.getItem("sign") === "Sign up Client") ?
+                  {(localStorage.getItem("sign") === "client") 
+                  // || (localStorage.getItem("sign") === "Sign up Client") 
+                  ?
                     ( <Nav.Link as={Link} to={"/client-profile"}  >Profile</Nav.Link> ) :
 
                     (<div>
