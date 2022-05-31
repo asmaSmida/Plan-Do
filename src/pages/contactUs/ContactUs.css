@@ -1,0 +1,24 @@
+.contactUs{
+    padding: 5rem;
+}
+.contactUs h1,hr{
+    color: #03444A;
+    font-size: 3rem;
+    letter-spacing: 3px;
+}
+.contactUs h3{
+    color: #D5A09E;
+    letter-spacing: 3px;
+}
+.contactUs strong{
+    color: #00A8A8;
+    letter-spacing: 1px;
+}
+.contactUs button{
+    background-color: #D5A09E;
+    color: white;
+}
+.contactUs button:hover{
+    background-color: #e7e7e010;
+    color: #D5A09E;
+}

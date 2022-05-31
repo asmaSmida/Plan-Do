@@ -55,9 +55,11 @@ const NavbarComp = () => {
             <Nav className="me-auto text-primary" variant="custom" >
               <Nav.Link eventKey="1" as={Link} to={"/"}>Accueil</Nav.Link>
               <Nav.Link as={Link} to={"/single"}>Kenza Establishment</Nav.Link>
+              <Nav.Link as= {Link} to={"/estates"}> Places </Nav.Link>
               <Nav.Link as={Link} to={"/Annif"}>Anniversaire</Nav.Link>
               <Nav.Link as={Link} to={"/teamBuilding"}>TeamBuilding</Nav.Link>
               <Nav.Link as={Link} to={"/shoot"}>PhotoShoot</Nav.Link>
+              <Nav.Link as={Link} to={"/contactUs"}>Contact Us</Nav.Link>
             </Nav>
             <Nav>
               {isAuth() ? (
