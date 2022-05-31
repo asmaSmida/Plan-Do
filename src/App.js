@@ -28,7 +28,7 @@ function App() {
             <Route exact path="/annif" element={<PlacesList type ="lorem" />}  />
             <Route exact path="/teambuilding" element={<PlacesList type ="molli" />}  />
             <Route exact path="/shoot" element={<PlacesList type ="ipsum" />}  />
-            {/* <Route exact path="/projects/:id" element={<ShowPlaces/>}  />  */}
+            <Route exact path="/places/:id" element={<SingleEstablish/>}  /> 
          </Routes>
        </ >
      </div>

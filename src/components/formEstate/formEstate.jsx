@@ -28,9 +28,21 @@ const FormEstate = () => {
         patrimoine: false,
         plage: false,
         randonnee: false,
-        
+
     };
 
+    const setImage = (event) => {
+        const token = localStorage.getItem("token");
+        const fd = new FormData();
+        const file = event.target.files[0];
+        fd.append("file", file, file.name);
+        console.log("phooto");
+        axios
+            .post("http://localhost:8000/recrutme/authclient/picture/" + token, fd)
+            .then((result) => {
+                formValues.image = result.data.image;
+            });
+    };
     const [formValues, setFormValues] = useState(defaultValues);
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -55,7 +67,7 @@ const FormEstate = () => {
             patrimoine: formValues.patrimoine,
             plage: formValues.plage,
             randonnee: formValues.randonnee,
-            
+
         }
         const token = localStorage.getItem('token');
 
@@ -87,16 +99,16 @@ const FormEstate = () => {
             const upload_file = e.target.files[0];
             const fileName = e.target.files[0].name;
             const formData = new FormData();
-            formData.append('file', upload_file); 
+            formData.append('file', upload_file);
             formData.append('fileName', fileName);
             const request = axios.post("http://localhost:3000/upload", formData)
                 .then(function (response) {
                     console.log('successfully uploaded', upload_file);
                 });
-                setFormValues({
-                    ...formValues,
-                    [name]: formData,
-                });
+            setFormValues({
+                ...formValues,
+                [name]: formData,
+            });
         } else {
             console.log('You need to select a file');
         }
@@ -153,7 +165,19 @@ const FormEstate = () => {
                     />
                 </Grid>
                 <br></br>
-                <Grid item>
+
+                <div className="d-none d-md-block">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <input
+                            type="file"
+                            name="profile"
+                            id="fileUploadField"
+                            onChange={(event) => setImage(event)}
+                        ></input>
+                    </form>
+                </div>
+                <br />
+                {/* <Grid item>
                     <TextField
                         id="image_input"
                         type="file"
@@ -161,7 +185,7 @@ const FormEstate = () => {
                         value={formValues.image}
                         onChange={handleInputChange} />
                 </Grid>
-                <br></br>
+                <br></br> */}
                 <Grid container alignItems="center" justify="center" direction="row">
                     <FormGroup>
                         <FormControlLabel
