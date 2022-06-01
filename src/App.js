@@ -10,6 +10,7 @@ import RegisterOwnerForm from './pages/authForms/RegisterOwnerForm';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import NavbarComp from './components/navbar/NavbarComp';
 import FormEstate from './components/formEstate/formEstate';
+import ContactUs from './pages/contactUs/ContactUs';
 
 function App() {
   return (   
@@ -25,10 +26,12 @@ function App() {
             <Route exact path="/register" element={<RegisterForm />}  />  
             <Route exact path="/register-owner" element={<RegisterOwnerForm />}  />  
             <Route exact path="/single" element={<SingleEstablish type =" " />}  />
+            <Route exact path="/estates" element={<PlacesList type ="" />}  />
             <Route exact path="/annif" element={<PlacesList type ="lorem" />}  />
             <Route exact path="/teambuilding" element={<PlacesList type ="molli" />}  />
             <Route exact path="/shoot" element={<PlacesList type ="ipsum" />}  />
-            <Route exact path="/places/:id" element={<SingleEstablish/>}  /> 
+            <Route exact path="/contactUs" element={<ContactUs />}  />
+            {/* <Route exact path="/projects/:id" element={<ShowPlaces/>}  />  */}
          </Routes>
        </ >
      </div>

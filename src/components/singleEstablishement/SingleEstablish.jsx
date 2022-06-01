@@ -6,6 +6,8 @@ import Map from '../../map/Map';
 import Leisure from '../leisure/leisure';
 import Footer from '../footer/Footer';
 import Contact from '../form/form';
+import { Link } from 'react-router-dom';
+
 
 export default function SingleEstablish(){
     return(
@@ -16,7 +18,9 @@ export default function SingleEstablish(){
                     <h5>Kelibia, 8000</h5>
                 </div>
                 <div>
-                    <button>Revenir à liste des etablissements</button>
+                    <Link to="/estates">
+                        <button type="button">Revenir à liste des etablissements</button>
+                    </Link>
                 </div>
             </div>
             <div className={classes.body}>

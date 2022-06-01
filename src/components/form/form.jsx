@@ -1,79 +1,79 @@
 import React, { useState } from "react";
 import classes from "./form.module.css";
 import { motion } from "framer-motion";
-
+import { send } from 'emailjs-com';
 const Contact = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [subject, setSubject] = useState("");
-    const [message, setMessage] = useState("");
-    const [warningMsg, setWarningMsg] = useState(false);
+   
+    const [toSend, setToSend] = useState({
+        from_name: '',
+        reply_to: '',
+        subject: '',
+        message: '',
 
-    const handleClick = (e) => {
-        if (name === "" || email === "" || subject === "" || message === "") {
-            setWarningMsg(true);
-            console.log(warningMsg);
-        } else {
-            setWarningMsg(false);
-            setName("");
-            setEmail("");
-            setSubject("");
-            setMessage("");
-        }
+    });
+    const onSubmit = (e) => {
+        e.preventDefault();
+        send(
+            'service_rqjakyc',
+            'template_zpl8pj3',
+            toSend,
+            'X5HGW1EeAGH5M4OTs'
+        )
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            })
+            .catch((err) => {
+                console.log('FAILED...', err);
+            });
+        setToSend({
+            from_name: '',
+            reply_to: '',
+            subject: '',
+            message: '',
+    
+        })
+    }
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setToSend({ ...toSend, [name]: value });
     };
-
     return (
         <motion.div initial="out" animate="in" exit="out">
             <div className={classes.contact}>
-                <form>
+                <form onSubmit={onSubmit}>
                     <input
                         className={classes.input}
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        type='text'
+                        name='from_name'
+                        placeholder='from name'
+                        value={toSend.from_name}
+                        onChange={handleChange}
                     />
                     <input
                         className={classes.input}
-                        type="text"
-                        id="email"
-                        name="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        type='text'
+                        name='reply_to'
+                        placeholder='Your email'
+                        value={toSend.reply_to}
+                        onChange={handleChange}
                     />
-
                     <input
                         className={classes.input}
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        placeholder="Subject"
-                        value={subject}
-                        onChange={(e) => setSubject(e.target.value)}
+                        type='text'
+                        name='subject'
+                        placeholder='Subject'
+                        value={toSend.subject}
+                        onChange={handleChange}
                     />
                     <textarea
                         className={classes.input}
-                        type="textarea"
-                        name="msg"
-                        placeholder="Your Message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
+                        name='message'
+                        placeholder='Your message'
+                        value={toSend.message}
+                        onChange={handleChange}
                     />
-
-                    {warningMsg ? (
-                        <p className="error-contact">
-                            Please fill the required fields above.
-                        </p>
-                    ) : (
-                        ""
-                    )}
-                    <div className={classes.button}>
+                     <div className={classes.button}>
                         <button
-                            block
-                            onClick={handleClick}
                         >
                             SEND MESSAGE
                         </button>
