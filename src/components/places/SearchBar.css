@@ -34,4 +34,9 @@
     font-size: 2rem;
     color: white;
   }
- 
+ .titleSearch{
+   text-align: center;
+   color: #03444A;
+   letter-spacing: 3px;
+   margin: 3rem;
+ }

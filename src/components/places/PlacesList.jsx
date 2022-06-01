@@ -28,8 +28,11 @@ const PlacesList = ({ type }) => {
   return (
     <>
       <div  >
+        <div>
+          <h1 className="titleSearch">Les Espaces {type}</h1>
+        </div>
         <div className="search">
-            <input type='text' placeholder='Enter the Estate Name' value={changedName} onChange={(e) => setChangedName(e.target.value)} /> 
+            <input type='text' placeholder="Entrer le Nom de l'espace" value={changedName} onChange={(e) => setChangedName(e.target.value)} /> 
           <div className="searchIcon">
             <SearchIcon />
           </div>
@@ -38,7 +41,7 @@ const PlacesList = ({ type }) => {
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
             {places && 
-            <ShowList places={search(places)} type={type} />
+            <ShowList places={search(places)} type={type.toLowerCase()} />
             }
           </div>
         </div>

@@ -17,15 +17,14 @@ export default function SingleEstablish() {
     useEffect(() => {
         console.log(id);
         axios.get(`http://localhost:5000/plando/estate/${id}`)
-        .then(response => {
-            setEstate(response.data);
-            console.log("hey", estate);
-        }
-        )
-        .catch(err => console.log(err)); 
+            .then(response => {
+                setEstate(response.data);
+                console.log("hey", estate);
+            }
+            )
+            .catch(err => console.log("hiiiiiiiiiiiiiiiiiiiii"));
 
     }, []);
-
     return (
         <div className={classes.singleContainer}>
             <div className={classes.header}>
@@ -72,7 +71,7 @@ export default function SingleEstablish() {
                             <p className={classes.p}>
                                 {estate.summary}
                             </p>
-                       </div>
+                        </div>
                     </div>
                 </div>
                 <div className={classes.row}>
@@ -82,8 +81,8 @@ export default function SingleEstablish() {
                         <p className={classes.p}>{estate.amenities}</p>
                     </div>
                 </div>
-                <div className={classes.agent}>
-                    <h2>Contact Agent</h2>
+                {/* <div className={classes.agent}>
+                    <h2>Contact d'Agent</h2>
                     <hr className={classes.hrEst} />
                     <div className={classes.agentbody}>
                         <div className={classes.image}>
@@ -91,29 +90,25 @@ export default function SingleEstablish() {
                         </div>
                         <div>
                             <p className={classes.p}>
-                                Anabella Geller
-                                Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
+                                {estate.owner.name}
                             </p>
                             <p className={classes.p}>
                                 Phone:
-                                (222) 4568932</p>
-                            <p className={classes.p}>
-                                Mobile:
-                                777 287 378 737</p>
+                                {estate.owner.telephone}</p>
                             <p className={classes.p}>
                                 Email:
-                                annabella@example.com</p>
+                                {estate.owner.email}</p>
                             <p className={classes.p}>
-                                Skype:
-                                Annabela.ge
+                                Region:
+                                {estate.owner.region}
                             </p>
                         </div>
                         <div>
-                            <h3 className={classes.contactAgent}>Fill the form to contact the agent</h3>
+                            <h3 className={classes.contactAgent}>Remplir le formulaire pour contacter le host</h3>
                             <Contact />
                         </div>
                     </div>
-                </div>
+    </div>*/}
             </div>
             <hr ></hr>
             <div className={classes.map}>

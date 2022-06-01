@@ -29,8 +29,8 @@ function App() {
             <Route exact path="/estates" element={<PlacesList type ="" />}  />
             <Route exact path="/mariage" element={<PlacesList type ="mariage" />}  />
             <Route exact path="/annif" element={<PlacesList type ="anniversaire" />}  />
-            <Route exact path="/teambuilding" element={<PlacesList type ="team" />}  />
-            <Route exact path="/shoot" element={<PlacesList type ="shoot" />}  />
+            <Route exact path="/teambuilding" element={<PlacesList type ="team building" />}  />
+            <Route exact path="/shoot" element={<PlacesList type ="photoshoot" />}  />
             <Route exact path="/host-profile" element={<Profil />}  />
             <Route exact path="/estates/:id" element={<SingleEstablish />}  /> 
          </Routes>
