@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarComp from './components/navbar/NavbarComp';
 import FormEstate from './components/formEstate/formEstate';
 import ContactUs from './pages/contactUs/ContactUs';
+import Profil from './components/profil/Profil';
 
 function App() {
   return (   
@@ -26,11 +27,11 @@ function App() {
             <Route exact path="/register" element={<RegisterForm />}  />  
             <Route exact path="/register-owner" element={<RegisterOwnerForm />}  />  
             <Route exact path="/estates" element={<PlacesList type ="" />}  />
-            <Route exact path="/marriage" element={<PlacesList type ="marriage" />}  />
+            <Route exact path="/mariage" element={<PlacesList type ="mariage" />}  />
             <Route exact path="/annif" element={<PlacesList type ="anniversaire" />}  />
             <Route exact path="/teambuilding" element={<PlacesList type ="team" />}  />
             <Route exact path="/shoot" element={<PlacesList type ="shoot" />}  />
-            <Route exact path="/contactUs" element={<ContactUs />}  />
+            <Route exact path="/host-profile" element={<Profil />}  />
             <Route exact path="/estates/:id" element={<SingleEstablish />}  /> 
          </Routes>
        </ >

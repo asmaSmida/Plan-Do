@@ -4,6 +4,8 @@ import { CssBaseline } from '@material-ui/core';
 import Header from '../../components/home/Header';
 import PlaceToVisit from '../../components/home/Services';
 import Footer from '../../components/footer/Footer';
+import Whoarewe from '../../components/whoarewe/Whoarewe';
+import ContactUs from '../contactUs/ContactUs';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,6 +24,8 @@ export default function Acceuil(){
         <CssBaseline />
         <Header />
         <PlaceToVisit />
+        <Whoarewe />
+        <ContactUs />
         <Footer/>
       </div>
     );
