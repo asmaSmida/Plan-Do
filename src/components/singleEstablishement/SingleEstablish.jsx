@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classes from './SingleEstablish.module.css';
 import Dar from './Dar-Kenza.jpg';
 import agent from './agent.jpg';
@@ -6,16 +6,35 @@ import Map from '../../map/Map';
 import Leisure from '../leisure/leisure';
 import Footer from '../footer/Footer';
 import Contact from '../form/form';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 
 export default function SingleEstablish(){
+
+    const id=useParams("id");
+    const [estate, setEstate] = useState({})
+  
+    useEffect(() => {
+      const fetchEstate = async () =>{
+        try {
+          const {estate: response} = await axios.get('http://localhost:5000/plando/estate/'+id);
+          console.log(response);
+          setEstate(response);
+        } catch (error) {
+          
+          console.error(error.message);
+        }
+      }
+      fetchEstate();
+    }, []);
+    
     return(
         <div className={classes.singleContainer}> 
             <div className={classes.header}>
                 <div className={classes.vl}>
-                    <h3>Dar Kenza</h3>
-                    <h5>Kelibia, 8000</h5>
+                    <h3>{estate.nom}</h3>
+                    <h5>{estate.localisation}</h5>
                 </div>
                 <div>
                     <Link to="/estates">
@@ -28,46 +47,32 @@ export default function SingleEstablish(){
                     <img src={Dar} alt="dar Kenza" />
                 </div>
                 <div>
-                    <Leisure hammam="true" resto="true" piscine="true"/>
+                    <Leisure 
+                    hammam={estate.hammam} 
+                    restaurant={estate.restaurant} 
+                    piscine={estate.piscine}
+                    patrimoine={estate.patrimoine}
+                    plage={estate.plage}
+                    randonnee={estate.randonnee}
+                     />
                 </div>
                 <div className={classes.row}>
                     <div className={classes.column}>
                         <div>
                         <h2>Establishement Description</h2>
                         <hr className={classes.hrEst}/>
-                        <p className={classes.p}>Property Description
-                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Cras ultricies ligula sed magna dictum porta. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar quam id dui posuere blandit.
-                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec rutrum congue leo eget malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada.
+                        <p className={classes.p}>{estate.description}
                         </p>
                         </div>
                         <div>
                             <h2>Amenities</h2><hr className={classes.hrEst}/>
-                            <ul>
-                                <li>
-                                    Parking
-                                </li>
-                                <li>
-                                    Garden
-                                </li>
-                                <li>
-                                    Outdoor Kitchen
-                                </li>
-                                <li>
-                                    Internet
-                                </li>
-                            </ul>
+                            {estate.amenities}
                         </div>
                     </div>
                     <div className={classes.column}>
                         <h2>Quick Summary</h2><hr className={classes.hrEst}/>
                         <p className={classes.p}>
-                                Property ID:1134
-                                Location: Kelibia, IL 606543
-                                Property Type: House
-                                Area:340m 2
-                                Beds:4
-                                Baths:2
-                                Garage: 1
+                                {estate.summary}
                         </p>
                     </div>
                 </div>
