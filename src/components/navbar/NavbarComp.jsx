@@ -55,10 +55,11 @@ const NavbarComp = () => {
             <Nav className="me-auto text-primary" variant="custom" >
               <Nav.Link eventKey="1" as={Link} to={"/"}>Accueil</Nav.Link>
               <Nav.Link as= {Link} to={"/estates"}> Places </Nav.Link>
+              <Nav.Link as={Link} to={"/Annif"}>Mariage</Nav.Link>
               <Nav.Link as={Link} to={"/Annif"}>Anniversaire</Nav.Link>
               <Nav.Link as={Link} to={"/teamBuilding"}>TeamBuilding</Nav.Link>
               <Nav.Link as={Link} to={"/shoot"}>PhotoShoot</Nav.Link>
-              <Nav.Link as={Link} to={"/contactUs"}>Contact Us</Nav.Link>
+              <Nav.Link as={Link} to={"/contactUs"}>Contactez Nous</Nav.Link>
             </Nav>
             <Nav>
               {isAuth() ? (
@@ -66,24 +67,24 @@ const NavbarComp = () => {
                   {(localStorage.getItem("sign") === "client") 
                   // || (localStorage.getItem("sign") === "Sign up Client") 
                   ?
-                    ( <Nav.Link as={Link} to={"/client-profile"}  >Profile</Nav.Link> ) :
+                    ( <Nav.Link as={Link} to={"/client-profile"}  >Profil</Nav.Link> ) :
 
                     (<div>
-                      <Nav.Link as={Link} to={"/host-profile"} style={{float:"right"}}>Profile</Nav.Link> 
-                      <Nav.Link as={Link} to={"/add-estate"}style={{float:"left"}}>Add Estate</Nav.Link>
+                      <Nav.Link as={Link} to={"/host-profile"} style={{float:"right"}}>Profil</Nav.Link> 
+                      <Nav.Link as={Link} to={"/add-estate"}style={{float:"left"}}>Ajouter une place</Nav.Link>
 
                     </div>)
                   }
-                  <Nav.Link as={Link} to={"/"} onClick={signout}>LogOut</Nav.Link>
+                  <Nav.Link as={Link} to={"/"} onClick={signout}>Déconnecter</Nav.Link>
                 </Nav>
 
               ) : (
                 <NavDropdown title="connexion" id="collasible-nav-dropdown">
-                  <NavDropdown.Item as={Link} to={"/register"}>s'inscrire</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to={"/register"}>S'inscrire</NavDropdown.Item>
                   <NavDropdown.Item as={Link} to={"/register-owner"}>Devenir Hote</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item as={Link} to={"/login"}>connexion client</NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to={"/login-host"}>connexion Hote </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to={"/login"}>Connexion client</NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to={"/login-host"}>Connexion Hote </NavDropdown.Item>
                 </NavDropdown>
               )}
             </Nav>

@@ -26,9 +26,10 @@ function App() {
             <Route exact path="/register" element={<RegisterForm />}  />  
             <Route exact path="/register-owner" element={<RegisterOwnerForm />}  />  
             <Route exact path="/estates" element={<PlacesList type ="" />}  />
-            <Route exact path="/annif" element={<PlacesList type ="lorem" />}  />
-            <Route exact path="/teambuilding" element={<PlacesList type ="molli" />}  />
-            <Route exact path="/shoot" element={<PlacesList type ="ipsum" />}  />
+            <Route exact path="/marriage" element={<PlacesList type ="marriage" />}  />
+            <Route exact path="/annif" element={<PlacesList type ="anniversaire" />}  />
+            <Route exact path="/teambuilding" element={<PlacesList type ="team" />}  />
+            <Route exact path="/shoot" element={<PlacesList type ="shoot" />}  />
             <Route exact path="/contactUs" element={<ContactUs />}  />
             <Route exact path="/estates/:id" element={<SingleEstablish />}  /> 
          </Routes>

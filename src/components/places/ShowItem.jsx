@@ -28,7 +28,7 @@ const ShowItem = ({ place }) => {
     return (
         <div key={place.id} className="card text-center shadow">
             <div className="overflow">
-                <img src={image} alt="home" className='card-img-top' />
+                <img src={place.image} alt="home" className='card-img-top' />
             </div>
             <div className="card-body text-dark">
                 <h4 className="card-title">{place.name}</h4>

@@ -33,15 +33,18 @@ export default function SingleEstablish() {
                     <h3>{estate.name}</h3>
                     <h5>{estate.localisation}</h5>
                 </div>
-                <div>
+                <div className={classes.links}>
                     <Link to="/estates">
                         <button type="button">Revenir à liste des etablissements</button>
                     </Link>
+                    <button>
+                        Réserver l'éspace
+                    </button>
                 </div>
             </div>
             <div className={classes.body}>
                 <div className={classes.img}>
-                    <img src={Dar} alt="dar Kenza" />
+                    <img src={estate.image} alt={Dar} />
                 </div>
                 <div>
                     <Leisure
