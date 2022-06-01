@@ -1,3 +1,6 @@
+body{
+ background: linear-gradient(110deg, #d5a09e22 0%, #9ad3da1d 100%);;
+}
 .formEstate {
     padding: 3rem;
     background: linear-gradient(110deg, #D5A09E 0%, #9AD3DA 100%);

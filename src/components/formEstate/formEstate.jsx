@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -17,7 +18,9 @@ const FormEstate = () => {
     const [checkedrandonnee, setChekedRandonnee] = useState(false);
     const defaultValues = {
         nom: "",
+        type: "",
         description: "",
+        capacity: "",
         localisation: "",
         summary: "",
         amenities: "",
@@ -28,7 +31,7 @@ const FormEstate = () => {
         patrimoine: false,
         plage: false,
         randonnee: false,
-
+        price: "",
     };
 
     const setImage = (event) => {
@@ -55,8 +58,10 @@ const FormEstate = () => {
         event.preventDefault();
         const estate = {
             name: formValues.nom,
+            type: formValues.type,
             description: formValues.description,
             localisation: formValues.localisation,
+            capacity: formValues.capacity,
             summary: formValues.summary,
             amenities: formValues.amenities,
             image: formValues.image,
@@ -67,7 +72,7 @@ const FormEstate = () => {
             patrimoine: formValues.patrimoine,
             plage: formValues.plage,
             randonnee: formValues.randonnee,
-
+            price: formValues.price,
         }
         const token = localStorage.getItem('token');
 
@@ -89,30 +94,30 @@ const FormEstate = () => {
             })
     };
 
-    const handleFileChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues({
-            ...formValues,
-            [name]: value,
-        });
-        if (e.target.input.files.length) {
-            const upload_file = e.target.files[0];
-            const fileName = e.target.files[0].name;
-            const formData = new FormData();
-            formData.append('file', upload_file);
-            formData.append('fileName', fileName);
-            const request = axios.post("http://localhost:3000/upload", formData)
-                .then(function (response) {
-                    console.log('successfully uploaded', upload_file);
-                });
-            setFormValues({
-                ...formValues,
-                [name]: formData,
-            });
-        } else {
-            console.log('You need to select a file');
-        }
-    };
+    // const handleFileChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setFormValues({
+    //         ...formValues,
+    //         [name]: value,
+    //     });
+    //     if (e.target.input.files.length) {
+    //         const upload_file = e.target.files[0];
+    //         const fileName = e.target.files[0].name;
+    //         const formData = new FormData();
+    //         formData.append('file', upload_file);
+    //         formData.append('fileName', fileName);
+    //         const request = axios.post("http://localhost:3000/upload", formData)
+    //             .then(function (response) {
+    //                 console.log('successfully uploaded', upload_file);
+    //             });
+    //         setFormValues({
+    //             ...formValues,
+    //             [name]: formData,
+    //         });
+    //     } else {
+    //         console.log('You need to select a file');
+    //     }
+    // };
     return (
         <form onSubmit={handleSubmit} className={classes.formEstate}>
             <h2>Adding your Estate</h2>
@@ -157,6 +162,15 @@ const FormEstate = () => {
                 </Grid>
                 <Grid item>
                     <TextField
+                        id="capacity"
+                        name="capacity"
+                        label="Capacity"
+                        value={formValues.capacity}
+                        onChange={handleInputChange}
+                    />
+                </Grid>
+                <Grid item>
+                    <TextField
                         id="summary-input"
                         name="summary"
                         label="summary"
@@ -177,7 +191,45 @@ const FormEstate = () => {
                     </form>
                 </div>
                 <br />
-                {/* <Grid item>
+                {/* {/* <Grid item> */}
+                <Grid item>
+                    <TextField
+                        id="price"
+                        name="price"
+                        label="Price"
+                        value={formValues.price}
+                        onChange={handleInputChange}
+                    />
+                </Grid>
+                <br />
+                <Grid item>
+                    <div className="radio">
+                        <label>
+                            <input type="radio" value={formValues.type} onChange={handleInputChange} checked={true} />
+                            Anniversaire
+                        </label>
+                    </div>
+                    <div className="radio">
+                        <label>
+                            <input type="radio" value={formValues.type} onChange={handleInputChange} />
+                            Photoshoot
+                        </label>
+                    </div>
+                    <div className="radio">
+                        <label>
+                            <input type="radio" value={formValues.type} onChange={handleInputChange} />
+                            Mariage
+                        </label>
+                    </div>
+                    <div className="radio">
+                        <label>
+                            <input type="radio" value={formValues.type} onChange={handleInputChange} />
+                            Team Building
+                        </label>
+                    </div>
+                </Grid>
+                <br />
+                <Grid item>
                     <TextField
                         id="image_input"
                         type="file"
@@ -185,7 +237,7 @@ const FormEstate = () => {
                         value={formValues.image}
                         onChange={handleInputChange} />
                 </Grid>
-                <br></br> */}
+                <br></br> 
                 <Grid container alignItems="center" justify="center" direction="row">
                     <FormGroup>
                         <FormControlLabel
@@ -321,6 +373,7 @@ const FormEstate = () => {
                         />
                     </FormGroup>
                 </Grid>
+                
                 <br></br>
                 <Button variant="contained" color="primary" type="submit">
                     Submit
