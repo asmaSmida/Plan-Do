@@ -8,6 +8,7 @@ import { FormControlLabel, FormGroup } from "@material-ui/core";
 import { pink } from '@mui/material/colors';
 import Checkbox from '@mui/material/Checkbox';
 import classes from './formEstate.module.css';
+import Footer from "../footer/Footer";
 const FormEstate = () => {
 
     const [checkedpiscine, setChekedPiscine] = useState(false);
@@ -119,6 +120,8 @@ const FormEstate = () => {
     //     }
     // };
     return (
+        <>
+        <div className={classes.containerAdd}>
         <form onSubmit={handleSubmit} className={classes.formEstate}>
             <h2>Adding your Estate</h2>
             <Grid container alignItems="center" justify="center" direction="column">
@@ -364,6 +367,10 @@ const FormEstate = () => {
                 </Button>
             </Grid>
         </form>
+        
+        </div>
+        <Footer />
+        </>
     );
 };
 export default FormEstate;

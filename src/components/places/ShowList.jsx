@@ -5,7 +5,10 @@ import ShowItem from "./ShowItem";
 const ShowList = ({ places, type, title }) => {
   const [favorites, setFavorites] = useState([])
 
-
+  const addToFavorites = (places) => {
+      setFavorites([...favorites, places])
+      console.log("its work?")
+    }
   return (
     <div className='container-fluid d-flex justify-content-center'>
       <div className='row'>

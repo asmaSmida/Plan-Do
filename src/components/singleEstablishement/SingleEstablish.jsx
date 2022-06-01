@@ -12,28 +12,25 @@ import axios from 'axios';
 
 export default function SingleEstablish() {
 
-    const id = useParams("id");
-    const [estate, setEstate] = useState({})
-
+    const {id}=useParams();
+    const [estate, setEstate] = useState('')
     useEffect(() => {
-        const fetchEstate = async () => {
-            try {
-                const { estate: response } = await axios.get('http://localhost:5000/plando/estate/' + id);
-                console.log(response);
-                setEstate(response);
-            } catch (error) {
-
-                console.error(error.message);
-            }
+        console.log(id);
+        axios.get(`http://localhost:5000/plando/estate/${id}`)
+        .then(response => {
+            setEstate(response.data);
+            console.log("hey", estate);
         }
-        fetchEstate();
+        )
+        .catch(err => console.log(err)); 
+
     }, []);
 
     return (
         <div className={classes.singleContainer}>
             <div className={classes.header}>
                 <div className={classes.vl}>
-                    <h3>{estate.nom}</h3>
+                    <h3>{estate.name}</h3>
                     <h5>{estate.localisation}</h5>
                 </div>
                 <div>
@@ -58,28 +55,33 @@ export default function SingleEstablish() {
                 </div>
                 <div className={classes.row}>
                     <div className={classes.column}>
-                       
+                        <div>
                             <h2>Establishement Description</h2>
                             <hr className={classes.hrEst} />
                             <p className={classes.p}>{estate.description}
                             </p>
-                        
+                        </div>
                     </div>
                     <div className={classes.column}>
-        
-                            <h2>Quick Summary</h2><hr className={classes.hrEst} />
+                        <div>
+                            <h2>Quick Summary</h2>
+                            <hr className={classes.hrEst} />
                             <p className={classes.p}>
                                 {estate.summary}
                             </p>
-                       
+                       </div>
                     </div>
                 </div>
                 <div className={classes.row}>
-                    <h2>Amenities</h2><hr className={classes.hrEst} />
-                    <p className={classes.p}>{estate.amenities}</p>
+                    <div>
+                        <h2>Amenities</h2>
+                        <hr className={classes.hrEst} />
+                        <p className={classes.p}>{estate.amenities}</p>
+                    </div>
                 </div>
                 <div className={classes.agent}>
-                    <h2>Contact Agent</h2><hr className={classes.hrEst} />
+                    <h2>Contact Agent</h2>
+                    <hr className={classes.hrEst} />
                     <div className={classes.agentbody}>
                         <div className={classes.image}>
                             <img src={agent} alt='agent'></img>
