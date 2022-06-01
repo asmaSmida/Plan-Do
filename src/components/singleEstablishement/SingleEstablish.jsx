@@ -12,21 +12,18 @@ import axios from 'axios';
 
 export default function SingleEstablish(){
 
-    const id=useParams("id");
-    const [estate, setEstate] = useState({})
-  
+    const {id}=useParams();
+    const [estate, setEstate] = useState('')
     useEffect(() => {
-      const fetchEstate = async () =>{
-        try {
-          const {estate: response} = await axios.get('http://localhost:5000/plando/estate/'+id);
-          console.log(response);
-          setEstate(response);
-        } catch (error) {
-          
-          console.error(error.message);
+        console.log(id);
+        axios.get(`http://localhost:5000/plando/estate/${id}`)
+        .then(response => {
+            setEstate(response.data);
+            console.log("hey", estate);
         }
-      }
-      fetchEstate();
+        )
+        .catch(err => console.log(err)); 
+
     }, []);
     
     return(

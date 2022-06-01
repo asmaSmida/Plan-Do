@@ -2,9 +2,6 @@ import { useState } from "react";
 import ShowItem from "./ShowItem";
 //import Pagination from 'react-bootstrap/Pagination';
 
-<<<<<<< HEAD
-const ShowList = ({ places, type }) => {
-=======
 const ShowList = ({ places, type, title }) => {
   const [favorites, setFavorites] = useState([])
 
@@ -12,7 +9,6 @@ const ShowList = ({ places, type, title }) => {
       setFavorites([...favorites, places])
       console.log("its work?")
     }
->>>>>>> f44ba719062a32987c18450b68093a136c241c86
   return (
     <div className='container-fluid d-flex justify-content-center'>
       <div className='row'>
