@@ -19,7 +19,7 @@
 //         randonnee: false,
 //         price: "",
 //     }
-//     axios.post('http://localhost:5000/plando/estate-favorites/',place)
+//     axios.post('http://localhost:5000/plando/estate-favorites/',places)
 //     .then(response =>{
 //         if(response.data.success){
 

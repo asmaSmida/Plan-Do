@@ -56,7 +56,7 @@ button:hover {
     margin: 2rem;
 }
 
-.colum {
+.column {
     display: flex;
     flex-direction: row;
 }
