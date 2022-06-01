@@ -178,19 +178,7 @@ const FormEstate = () => {
                         onChange={handleInputChange}
                     />
                 </Grid>
-                <br></br>
-
-                <div className="d-none d-md-block">
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <input
-                            type="file"
-                            name="profile"
-                            id="fileUploadField"
-                            onChange={(event) => setImage(event)}
-                        ></input>
-                    </form>
-                </div>
-                <br />
+                <br/>
                 {/* {/* <Grid item> */}
                 <Grid item>
                     <TextField
@@ -229,6 +217,20 @@ const FormEstate = () => {
                     </div>
                 </Grid>
                 <br />
+                <br/>
+
+                <div className="d-none d-md-block">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <input
+                            type="file"
+                            name="profile"
+                            id="fileUploadField"
+                            onChange={(event) => setImage(event)}
+                        ></input>
+                    </form>
+                </div>
+                <br />
+{/*                 
                 <Grid item>
                     <TextField
                         id="image_input"
@@ -237,7 +239,7 @@ const FormEstate = () => {
                         value={formValues.image}
                         onChange={handleInputChange} />
                 </Grid>
-                <br></br> 
+                <br></br>  */}
                 <Grid container alignItems="center" justify="center" direction="row">
                     <FormGroup>
                         <FormControlLabel

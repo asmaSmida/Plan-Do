@@ -1,15 +1,29 @@
 import useFetch from "./useFetch";
 import ShowList from "./ShowList";
 import Footer from "../footer/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './SearchBar.css';
 import SearchIcon from "@material-ui/icons/Search";
+import axios from "axios";
 
 const PlacesList = ({ type }) => {
-  const { data: places, isPending, error } = useFetch('https://jsonplaceholder.typicode.com/posts');
+  // const [places,setPlaces]=useState([]);
+  // const [changedName, setChangedName] = useState("");
+//   useEffect(() => {
+//     console.log('hhhh');
+//     axios.get('http://localhost:5000/plando/estate')
+//         .then(response => {
+//             setPlaces(response.data);
+//             console.log("hey", places);
+//         }
+//         )
+//         .catch(err => console.log(err+"lool")); 
+
+// },[] );
+  const { data: places, isPending, error } = useFetch('http://localhost:5000/plando/estate');
   const [changedName, setChangedName] = useState("");
   function search(places) {
-    return places.filter((place) => place.title.toLowerCase().indexOf(changedName) > -1);
+    return places.filter((place) => place.name.toLowerCase().indexOf(changedName) > -1);
   }
   return (
     <>
@@ -23,7 +37,9 @@ const PlacesList = ({ type }) => {
           <div>
             {error && <div>{error}</div>}
             {isPending && <div>Loading...</div>}
-            {places && <ShowList places={search(places)} type={type} />}
+            {places && 
+            <ShowList places={search(places)} type={type} />
+            }
           </div>
         </div>
         <Footer />

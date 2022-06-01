@@ -10,8 +10,8 @@ const ShowItem = ({ place }) => {
                 <img src={image} alt="home" className='card-img-top' />
             </div>
             <div className="card-body text-dark">
-                <h4 className="card-title">{place.title}</h4>
-                <p className="card-text text-secondary">{place.body} </p>
+                <h4 className="card-title">{place.name}</h4>
+                <p className="card-text text-secondary">{place.description} </p>
             </div>
             <div className='card-footer'>
                 <Link to={`/places/${place.id}`} className="btn  btn-outline-info">
