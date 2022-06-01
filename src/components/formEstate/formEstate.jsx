@@ -189,32 +189,14 @@ const FormEstate = () => {
                         onChange={handleInputChange}
                     />
                 </Grid>
-                <br />
                 <Grid item>
-                    <div className="radio">
-                        <label>
-                            <input type="radio" value={formValues.type} onChange={handleInputChange} checked={true} />
-                            Anniversaire
-                        </label>
-                    </div>
-                    <div className="radio">
-                        <label>
-                            <input type="radio" value={formValues.type} onChange={handleInputChange} />
-                            Photoshoot
-                        </label>
-                    </div>
-                    <div className="radio">
-                        <label>
-                            <input type="radio" value={formValues.type} onChange={handleInputChange} />
-                            Mariage
-                        </label>
-                    </div>
-                    <div className="radio">
-                        <label>
-                            <input type="radio" value={formValues.type} onChange={handleInputChange} />
-                            Team Building
-                        </label>
-                    </div>
+                    <TextField
+                        id="type"
+                        name="type"
+                        label="Type d'évènement"
+                        value={formValues.type}
+                        onChange={handleInputChange}
+                    />
                 </Grid>
                 <br />
                 <br/>

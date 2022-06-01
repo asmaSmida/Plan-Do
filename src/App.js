@@ -25,13 +25,12 @@ function App() {
             <Route exact path="/login-host" element={<LoginHostForm   />}  /> 
             <Route exact path="/register" element={<RegisterForm />}  />  
             <Route exact path="/register-owner" element={<RegisterOwnerForm />}  />  
-            <Route exact path="/single" element={<SingleEstablish type =" " />}  />
             <Route exact path="/estates" element={<PlacesList type ="" />}  />
             <Route exact path="/annif" element={<PlacesList type ="lorem" />}  />
             <Route exact path="/teambuilding" element={<PlacesList type ="molli" />}  />
             <Route exact path="/shoot" element={<PlacesList type ="ipsum" />}  />
             <Route exact path="/contactUs" element={<ContactUs />}  />
-            {/* <Route exact path="/projects/:id" element={<ShowPlaces/>}  />  */}
+            <Route exact path="/estates/:id" element={<SingleEstablish />}  /> 
          </Routes>
        </ >
      </div>

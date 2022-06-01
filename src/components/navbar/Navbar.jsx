@@ -9,7 +9,6 @@ const Navbar = () => {
         <h3>PLAN and DO</h3>
         <div className={classes.links}>
           <Link to="/" className={classes.linkButton}>Home</Link>
-          <Link to="/single"className={classes.linkButton}>Single Place</Link>
           <Link to="/estates"className={classes.linkButton}>Places</Link>
           <Link to="/annif"className={classes.linkButton}>Anniversary Places</Link>
           <Link to="/teambuilding"className={classes.linkButton}>TeamBuilding Places</Link>
