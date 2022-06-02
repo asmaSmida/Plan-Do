@@ -10,7 +10,6 @@ import RegisterOwnerForm from './pages/authForms/RegisterOwnerForm';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import NavbarComp from './components/navbar/NavbarComp';
 import FormEstate from './components/formEstate/formEstate';
-import ContactUs from './pages/contactUs/ContactUs';
 import Profil from './components/profil/Profil';
 
 function App() {

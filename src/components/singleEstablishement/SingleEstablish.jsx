@@ -8,11 +8,14 @@ import Footer from '../footer/Footer';
 import Contact from '../form/form';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { Alert } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export default function SingleEstablish() {
-
-    const {id}=useParams();
+    const [isValid, setIsValid] = useState("");
+    const [clicked, setClicked] = useState(false);
+    const { id } = useParams();
     const [estate, setEstate] = useState('')
     useEffect(() => {
         console.log(id);
@@ -22,11 +25,46 @@ export default function SingleEstablish() {
                 console.log("hey", estate);
             }
             )
-            .catch(err => console.log("hiiiiiiiiiiiiiiiiiiiii"));
+            .catch(err => console.log(err));
 
     }, []);
+
+    const onClickButton = (() => {
+        if ((estate.available == true) && (clicked== false)) {
+            setClicked(!clicked);
+            setIsValid("yes");
+            // axios.post('http://localhost:5000/plando/reserve/reserver', reserver)
+            // .then(res => {
+            //     reserver= res.data;
+                
+            //     window.location.assign('/host-profile')
+            // })
+            // .catch(err => {
+            //     console.log(err.response);
+            // })
+            estate.available = false;
+        }
+        else if ((estate.available == false) && (clicked== true)){
+            setClicked(!clicked);
+            setIsValid("");
+            estate.available = true;
+        }
+        else{
+            setIsValid("no");
+        }
+
+    })
+    let title=!clicked? "Réserver l'éspace":"Terminer la réservation";
     return (
         <div className={classes.singleContainer}>
+            {isValid == "yes"
+                ? <Alert variant="success">Félicitations! Votre Reservation est effectuée</Alert>
+                : console.log("hi")
+            }
+            {isValid == "no"
+                ? <Alert variant="danger">Désolé! L'espace est déjà reservé</Alert>
+                : console.log("hi")
+            }
             <div className={classes.header}>
                 <div className={classes.vl}>
                     <h3>{estate.name}</h3>
@@ -36,8 +74,8 @@ export default function SingleEstablish() {
                     <Link to="/estates">
                         <button type="button">Revenir à liste des etablissements</button>
                     </Link>
-                    <button>
-                        Réserver l'éspace
+                    <button onClick={onClickButton}>
+                        {title}
                     </button>
                 </div>
             </div>
