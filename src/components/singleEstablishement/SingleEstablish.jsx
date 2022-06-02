@@ -36,7 +36,7 @@ export default function SingleEstablish() {
             axios.post('http://localhost:5000/plando/reserve/reserver', {estate:id})
             .then(res => {
                 console.log("ok",id, res);
-                window.location.assign('/')
+                // window.location.assign('/')
             })
             .catch(err => {
                 console.log(err.response);
