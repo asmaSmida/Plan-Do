@@ -35,7 +35,7 @@ const ShowItem = ({ place }) => {
                 <p className="card-text text-secondary">{place.description} </p>
             </div>
             <div className='card-footer'>
-                <Link to={`/estates/${place._id}`} className="btn btn-primary">
+                <Link to={`/estates/${place._id}`} style={{height:"45px"}} className="btn btn-outline-primary">
                     Plus de Details
                 </Link>  
                 {/* <Favorite userFrom={localStorage.getItem('userId')}  /> */}

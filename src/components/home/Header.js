@@ -68,9 +68,9 @@ export default function Header() {
                 type="typewriter" 
                 timing="easy"
                 dataText={[
-                  'Plan ',
-                  'Do ',
-                ]} /> &nbsp; it &nbsp;the &nbsp;right &nbsp;<span className={classes.colorText}>Way.</span></div>
+                  'Plan it',
+                  'Do it',
+                ]} />  &nbsp;the &nbsp;right &nbsp;<span className={classes.colorText}>Way.</span></div>
           </h1>
           <Scroll to="place-to-visit" smooth={true}>
             <IconButton>

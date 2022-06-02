@@ -68,11 +68,12 @@ const NavbarComp = () => {
                   ?
                     ( <Nav.Link as={Link} to={"/client-profile"}  >Profil</Nav.Link> ) :
 
-                    (<div>
-                      <Nav.Link as={Link} to={"/host-profile"} style={{float:"right"}}>Profil</Nav.Link> 
+                    (<>
+                      <Nav.Link as={Link} to={"/host-profile"} style={{float:"right"}}>Mon Profil</Nav.Link> 
+                      
                       <Nav.Link as={Link} to={"/add-estate"}style={{float:"left"}}>Ajouter une place</Nav.Link>
 
-                    </div>)
+                    </>)
                   }
                   <Nav.Link as={Link} to={"/"} onClick={signout}>Déconnecter</Nav.Link>
                 </Nav>

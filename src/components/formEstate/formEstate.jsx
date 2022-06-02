@@ -124,7 +124,7 @@ const FormEstate = () => {
         <>
         <div className={classes.containerAdd}>
         <form onSubmit={handleSubmit} className={classes.formEstate}>
-            <h2>Adding your Estate</h2>
+            <h2>Ajouter votre propriété</h2>
             <Grid container alignItems="center" justify="center" direction="column">
                 <Grid item>
                     <TextField

@@ -35,10 +35,10 @@ const ShowHostItem = ({ place, deleteHandler }) => {
                 <p className="card-text text-secondary">{place.description} </p>
             </div>
             <div className='card-footer'>
-                <Link to={`/estates/${place._id}`} className="btn btn-primary">
+                <Link to={`/estates/${place._id}`} className="btn btn-outline-primary">
                     Plus de Details
                 </Link>  
-                <div style={{margin:"0rem 0.5rem"}} className="btn btn-danger" onClick={(e) => deleteHandler(place._id,e)}>Supprimer Projet</div>
+                <div style={{margin:"0rem 0.5rem"}} className="btn btn-outline-danger" onClick={(e) => deleteHandler(place._id,e)}>Supprimer </div>
                   
                 {/* <Favorite userFrom={localStorage.getItem('userId')}  /> */}
             </div>
