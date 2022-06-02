@@ -14,7 +14,7 @@ const ShowList = ({ places, type }) => {
       <div className='row'>
         {places.filter(place => place.type.includes(type)).map(place =>
           <div className='col-lg-4 col-md-6 col-sm-12'>
-            <ShowItem place={place}/>
+            <ShowItem place={place} />
           </div>
         )}
          {/* <Pagination>
