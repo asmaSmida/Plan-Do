@@ -63,7 +63,7 @@ export default function ContactUs() {
                         <h3 className="color_sec py-4">Communiquez avec Nous</h3>
                         <address>
                             <strong>Email:</strong>{" "}
-                            <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
+                            <a style={{textDecoration:"none", color:"black"}} href={`mailto:${contactConfig.YOUR_EMAIL}`}>
                                 {contactConfig.YOUR_EMAIL}
                             </a>
                             <br />
@@ -106,7 +106,7 @@ export default function ContactUs() {
                                     />
                                 </Col>
                             </Row>
-                            <Col className="form-group">
+                            <Col lg="15" className="form-group">
                                 <input
                                     className="form-control rounded-0"
                                     id="subject"

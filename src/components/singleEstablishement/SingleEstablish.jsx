@@ -33,15 +33,14 @@ export default function SingleEstablish() {
         if ((estate.available == true) && (clicked== false)) {
             setClicked(!clicked);
             setIsValid("yes");
-            // axios.post('http://localhost:5000/plando/reserve/reserver', reserver)
-            // .then(res => {
-            //     reserver= res.data;
-                
-            //     window.location.assign('/host-profile')
-            // })
-            // .catch(err => {
-            //     console.log(err.response);
-            // })
+            axios.post('http://localhost:5000/plando/reserve/reserver', {estate:id})
+            .then(res => {
+                console.log("ok",id, res);
+                window.location.assign('/')
+            })
+            .catch(err => {
+                console.log(err.response);
+            })
             estate.available = false;
         }
         else if ((estate.available == false) && (clicked== true)){

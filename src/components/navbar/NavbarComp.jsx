@@ -49,7 +49,7 @@ const NavbarComp = () => {
       </style>
       <Navbar collapseOnSelect sticky="top" text="custom" expand="lg" bg="custom" variant="dark"  >
         <Container >
-          <Navbar.Brand as={Link} to={"/"}>PLAN&DO</Navbar.Brand>
+          <Navbar.Brand as={Link} className="logo" style={{fontFamily: 'Kdam Thmor Pro' }} to={"/"}>PLAN&DO</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto text-primary" variant="custom" >

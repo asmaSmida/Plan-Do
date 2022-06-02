@@ -1,7 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
-import Header from '../../components/home/Header';
+import Header from '../../components/home/Header'; 
+
 import PlaceToVisit from '../../components/home/Services';
 import Footer from '../../components/footer/Footer';
 import Whoarewe from '../../components/whoarewe/Whoarewe';

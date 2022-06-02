@@ -5,7 +5,7 @@
     padding: .5rem;
 }
 .whoarewecontainer{
-    background-color: white;
+    background-color: transparent;
     width: 75%;
     margin: 2rem auto;
     text-align: center;
@@ -17,8 +17,8 @@
     margin: auto;
 }
 .whoarewetext h1{
-    color: #D5A09E;
-    font-size: 1.7rem;
+    color: #000;
+    font-size: 2.5rem;
     letter-spacing: 2px;
 }
 .whoarewetext p{

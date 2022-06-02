@@ -27,7 +27,9 @@
     font-weight: bold;
     color: #03444A;
 }
-
+.logo{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
 .navbar a:hover {
     color: #00A8A8;
 }
