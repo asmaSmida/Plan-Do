@@ -33,6 +33,7 @@ const FormEstate = () => {
         plage: false,
         randonnee: false,
         price: "",
+        available: true,
     };
 
     const setImage = (event) => {
